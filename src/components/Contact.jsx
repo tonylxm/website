@@ -1,4 +1,4 @@
-import { useState, useRep, useRef } from 'react';
+import { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
 import { styles } from '../styles';
@@ -64,36 +64,36 @@ const Contact = () => {
           className="mt-8 flex flex-col gap-8"
         >
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Name</span>
+            <span className={styles.formHeadText}>Name</span>
             <input
               type="text"
               name="name"
               value={form.name}
               onChange={handleChange}
               placeholder="Your name"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              className={styles.formSubText}
             />
           </label>
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Email</span>
+            <span className={styles.formHeadText}>Email</span>
             <input
               type="text"
               name="email"
               value={form.email}
               onChange={handleChange}
               placeholder="Your email"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              className={styles.formSubText}
             />
           </label>
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Message</span>
+            <span className={styles.formHeadText}>Message</span>
             <textarea
               rows="6"
               name="message"
               value={form.message}
               onChange={handleChange}
-              placeholder="Message"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              placeholder="Your message"
+              className={styles.formSubText}
             />
           </label>
           <button
