@@ -1,6 +1,6 @@
 import { styles } from '../styles';
 
-const Intro = () => {
+const Hero = () => {
   return (
   <section className="w-full h-screen flex justify-center items-center">
       <div>
@@ -11,4 +11,4 @@ const Intro = () => {
   )
 }
 
-export default Intro
+export default Hero
