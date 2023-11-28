@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import { motion } from 'framer-motion';
 
 import { styles } from '../styles';
 
@@ -27,8 +28,8 @@ const Contact = () => {
     // service_zw19n7e
 
     emailjs.send(
-      'service_zw19n7e', 
-      'template_y49vb0t', 
+      'service_zw19n7e',
+      'template_y49vb0t',
       {
         from_name: form.name,
         to_name: 'Tony',
@@ -37,7 +38,7 @@ const Contact = () => {
         message: form.message
       },
       'D8OsdM0fe8rYe2tFv'
-      )
+    )
       .then(() => {
         setLoading(false);
         alert('Your message has been sent!');
@@ -54,7 +55,16 @@ const Contact = () => {
   }
 
   return (
-    <div className="xl:mt-12 xl:flex-row gap-10 overflow-hidden w-full h-screen flex justify-center items-center">
+    <motion.div 
+    variants={{
+        hidden: { opacity: 0, y: 100},
+        show: { opacity: 1, y: 0}
+    }}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.25 }}
+      className="xl:mt-12 xl:flex-row gap-10 overflow-hidden w-full h-screen flex justify-center items-center"
+    >
       <div className="flex-[0.75] bg-black-100 p-8 rounded-2xl">
         <p className={styles.sectionSubText}>Get in touch</p>
         <h3 className={styles.sectionHeadText}>Contact</h3>
@@ -104,7 +114,7 @@ const Contact = () => {
           </button>
         </form>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
