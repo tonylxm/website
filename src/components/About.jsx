@@ -23,7 +23,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="bg-indigo-950">09</div>
+      <div className="bg-indigo-950">TechStack</div>
     </div>
   )
 }
