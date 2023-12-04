@@ -57,21 +57,20 @@ const Contact = () => {
   return (
     <motion.div 
     variants={{
-        hidden: { opacity: 0, y: 100},
-        show: { opacity: 1, y: 0}
+        hidden: { opacity: 0, y: 100 },
+        show: { opacity: 1, y: 0 },
     }}
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.25 }}
-      className="xl:mt-12 xl:flex-row gap-10 overflow-hidden w-full h-screen flex justify-center items-center"
+      className="xl:flex-row gap-10 overflow-hidden w-full h-screen flex justify-center items-center"
     >
-      <div className="flex-[0.75] bg-black-100 p-8 rounded-2xl">
-        <p className={styles.sectionSubText}>Get in touch</p>
+      <div className="flex-[0.75] md:flex-[0.5] bg-secondary p-4 rounded-2xl">
         <h3 className={styles.sectionHeadText}>Contact</h3>
         <form
           ref={formRef}
           onSubmit={handleSubmit}
-          className="mt-8 flex flex-col gap-8"
+          className="flex flex-col gap-3"
         >
           <label className="flex flex-col">
             <span className={styles.formHeadText}>Name</span>
@@ -82,33 +81,36 @@ const Contact = () => {
               onChange={handleChange}
               placeholder="Your name"
               className={styles.formSubText}
+              required
             />
           </label>
           <label className="flex flex-col">
             <span className={styles.formHeadText}>Email</span>
             <input
-              type="text"
+              type="email"
               name="email"
               value={form.email}
               onChange={handleChange}
               placeholder="Your email"
               className={styles.formSubText}
+              required
             />
           </label>
           <label className="flex flex-col">
             <span className={styles.formHeadText}>Message</span>
             <textarea
-              rows="6"
+              rows="5"
               name="message"
               value={form.message}
               onChange={handleChange}
               placeholder="Your message"
-              className={styles.formSubText}
+              className={styles.formSubText + ' resize-none'}
+              required
             />
           </label>
           <button
             type="submit"
-            className="bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl"
+            className="bg-primary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl hover:bg-indigo-950"
           >
             {loading ? 'Sending...' : 'Send'}
           </button>
