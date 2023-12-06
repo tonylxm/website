@@ -1,5 +1,6 @@
 import { styles } from '../styles';
 import profile from '../assets/profile.jpg';
+import resume from '../assets/Tony Lim Resume.pdf';
 
 const About = () => {
   return (
@@ -9,8 +10,8 @@ const About = () => {
           <div className='flex justify-center'>
             <img src={profile} className="rounded-full" width="250" height="250" />
           </div>
-          <div className="flex mt-6 justify-center">
-            <a href="https://www.linkedin.com/in/tonylxm/" target="_blank" className="text-tertiary hover:text-white">
+          <div className="flex mt-6 justify-center items-center text-tertiary">
+            <a href="https://www.linkedin.com/in/tonylxm/" target="_blank" className="hover:text-white">
               <svg className="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 448 512">
                 <path fill-rule="evenodd" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" clip-rule="evenodd" />
               </svg>
@@ -22,10 +23,15 @@ const About = () => {
               </svg>
               <span className="sr-only">GitHub</span>
             </a>
+            &nbsp;
+            <p className="text-tertiary ms-5 me-5">|</p>
+            <a href={resume} target="_blank" className=" text-lg hover:text-white underline">
+              Resume
+            </a>
           </div>
           <div className="p-12 text-left text-lg">
-            <p>I am a software development intern at <a href='https://www.emergencyq.com/' target="_blank" className="underline text-blue-400  hover:text-blue-500">Emergency Q</a>, an award-winning healthtech company working to reduce wait times and overcrowding in hospitals, urgent care clinics and emergency departments. I am passionate about contributing to building products that make a real difference in people's lives.</p>
-            <br/>
+            <p>I am a software development intern at <a href='https://www.emergencyq.com/' target="_blank" className="underline text-blue-400  hover:text-blue-500">Emergency Q</a>, an award-winning healthtech company working to reduce wait times and overcrowding in hospitals, urgent care clinics and emergency departments. I'm passionate about contributing to building products that make a real difference in people's lives.</p>
+            <br />
             <p>I am also the President of <a href='https://www.sesa.org.nz/' target="_blank" className="underline text-blue-400 hover:text-blue-500">SESA</a>, the Software Engineering Students Association at the University of Auckland for 2024.</p>
           </div>
         </div>
