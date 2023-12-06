@@ -14,8 +14,7 @@ const Animation = ({ children }) => {
                 }}
                 initial="hidden"
                 animate={ isInView ? "show" : "hidden" }
-                viewport={{ once: true, amount: 0.5 }}
-                transition={{ duration: 0.4, delay: 0.1 }}
+                transition={{ duration: 0.5, delay: 0.15}}
             >
                 {children}
             </motion.div>
