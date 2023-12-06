@@ -4,8 +4,6 @@ const Footer = () => {
   return (
     <footer className="bg-secondary">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-8">
-        <div className="md:flex md:justify-between">
-        </div>
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-md text-tertiary sm:text-center flex"><a href="#" className="hover:underline hover:text-white">Tony Lim 2023 </a>&nbsp;&nbsp;|&nbsp;&nbsp;Made using &nbsp;
             <svg className="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 512 512">

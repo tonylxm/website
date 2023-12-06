@@ -5,11 +5,10 @@ import Animation from '../utils/Animation';
 
 const About = () => {
   return (
-    <div className="grid grid-cols-2 w-full h-screen">
-      <div className="flex justify-center items-center bg-secondary">
+    <div className="w-full h-screen flex justify-center items-center bg-secondary">
+      <div className="flex-[0.75] md:flex-[0.5]">
         <Animation>
-        <div>
-          <div className='flex justify-center'>
+          <div className="flex justify-center">
             <div>
               <img src={profile} className="rounded-full" width="250" height="250" />
             </div>
@@ -38,10 +37,8 @@ const About = () => {
             <br />
             <p>I am also the President of <a href='https://www.sesa.org.nz/' target="_blank" className="underline text-blue-400 hover:text-blue-500">SESA</a>, the Software Engineering Students Association at the University of Auckland for 2024.</p>
           </div>
-        </div>
         </Animation>
       </div>
-      <div className="bg-indigo-950 text-center">My Tech Stack</div>
     </div>
   )
 }
