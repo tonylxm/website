@@ -16,8 +16,7 @@ const Hero = () => {
         ref={ref}
         initial="hidden"
         animate={ isInView ? "fadeIn" : "hidden"}
-        viewport={{ once: true, amount: 0.5 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 0.5, delay: 0.15 }}
       >
         <h1 className={`${styles.heroHeadText} text-white`}><span className="text-[#5f69ff]">Tony Lim</span></h1>
         <h2 className={`${styles.heroSubText} text-white-100`}>Software engineer based in Auckland, New Zealand</h2>

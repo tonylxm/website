@@ -55,61 +55,64 @@ const Contact = () => {
   }
 
   return (
-    <Animation>
-      <div className="xl:flex-row gap-10 overflow-hidden w-full h-screen flex justify-center items-center">
-        <div className="flex-[0.75] md:flex-[0.5] bg-secondary p-4 rounded-2xl">
-          <h3 className={styles.sectionHeadText}>Contact</h3>
-          <form
-            ref={formRef}
-            onSubmit={handleSubmit}
-            className="flex flex-col gap-3"
-          >
-            <label className="flex flex-col">
-              <span className={styles.formHeadText}>Name</span>
-              <input
-                type="text"
-                name="name"
-                value={form.name}
-                onChange={handleChange}
-                placeholder="Your name"
-                className={styles.formSubText}
-                required
-              />
-            </label>
-            <label className="flex flex-col">
-              <span className={styles.formHeadText}>Email</span>
-              <input
-                type="email"
-                name="email"
-                value={form.email}
-                onChange={handleChange}
-                placeholder="Your email"
-                className={styles.formSubText}
-                required
-              />
-            </label>
-            <label className="flex flex-col">
-              <span className={styles.formHeadText}>Message</span>
-              <textarea
-                rows="5"
-                name="message"
-                value={form.message}
-                onChange={handleChange}
-                placeholder="Your message"
-                className={styles.formSubText + ' resize-none'}
-                required
-              />
-            </label>
-            <button
-              type="submit"
-              className="bg-primary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl hover:bg-indigo-950"
+    <div className="xl:flex-row overflow-hidden w-full h-screen flex justify-center items-center">
+      <div className="flex-[0.75] md:flex-[0.5]">
+        <Animation>
+          <div className="bg-secondary p-4 rounded-2xl">
+            <h3 className={styles.sectionHeadText}>Contact</h3>
+            <form
+              ref={formRef}
+              onSubmit={handleSubmit}
+              className="flex flex-col gap-3"
             >
-              {loading ? 'Sending...' : 'Send'}
-            </button>
-          </form>
-        </div>
+              <label className="flex flex-col">
+                <span className={styles.formHeadText}>Name</span>
+                <input
+                  type="text"
+                  name="name"
+                  value={form.name}
+                  onChange={handleChange}
+                  placeholder="Your name"
+                  className={styles.formSubText}
+                  required
+                />
+              </label>
+              <label className="flex flex-col">
+                <span className={styles.formHeadText}>Email</span>
+                <input
+                  type="email"
+                  name="email"
+                  value={form.email}
+                  onChange={handleChange}
+                  placeholder="Your email"
+                  className={styles.formSubText}
+                  required
+                />
+              </label>
+              <label className="flex flex-col">
+                <span className={styles.formHeadText}>Message</span>
+                <textarea
+                  rows="5"
+                  name="message"
+                  value={form.message}
+                  onChange={handleChange}
+                  placeholder="Your message"
+                  className={styles.formSubText + ' resize-none'}
+                  required
+                />
+              </label>
+              <button
+                type="submit"
+                className="bg-primary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl hover:bg-indigo-950"
+              >
+                {loading ? 'Sending...' : 'Send'}
+              </button>
+            </form>
+          </div>
+        </Animation>
       </div>
-    </Animation>
+    </div >
+
   )
 }
 
