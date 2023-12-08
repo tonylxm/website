@@ -15,6 +15,8 @@ const styles = {
   formSubText: "text-white font-medium mb-2 text-md lg:text-lg",
   formText:
     "bg-primary py-3 px-3 text-md lg:text-lg placeholder:text-tertiary text-white rounded-lg outline-none border-none font-medium focus:bg-indigo-950",
+  button:
+    "bg-primary py-3 px-8 text-md lg:text-lg outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl hover:bg-indigo-950",
 };
 
 export { styles };
