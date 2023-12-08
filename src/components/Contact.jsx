@@ -58,7 +58,7 @@ const Contact = () => {
     <div className="xl:flex-row overflow-hidden w-full h-screen flex justify-center items-center pt-20">
       <div className="flex-[0.75] lg:flex-[0.5]">
         <Animation>
-          <div className="bg-secondary p-4 rounded-2xl">
+          <div className="bg-secondary p-4 rounded-2xl shadow-card">
             <h3 className={styles.sectionHeadText}>Contact</h3>
             <form
               ref={formRef}
@@ -103,7 +103,7 @@ const Contact = () => {
               </label>
               <button
                 type="submit"
-                className="bg-primary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl hover:bg-indigo-950"
+                className={styles.button}
               >
                 {loading ? 'Sending...' : 'Send'}
               </button>
