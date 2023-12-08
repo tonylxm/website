@@ -5,7 +5,6 @@ import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useMediaQuery } from '@chakra-ui/react';
 import rangitotoTop from '../assets/rangitoto-top.png';
 import rangitotoBottom from '../assets/rangitoto-bottom.jpg';
-import StarrySky from './StarrySky';
 
 const Hero = () => {
   const ref1 = useRef(null);
