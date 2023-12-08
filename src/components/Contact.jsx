@@ -58,7 +58,7 @@ const Contact = () => {
     <div className="xl:flex-row overflow-hidden w-full h-screen flex justify-center items-center pt-20">
       <div className="flex-[0.75] lg:flex-[0.5]">
         <Animation>
-          <div className="bg-secondary p-4 rounded-2xl">
+          <div className="bg-secondary p-4 rounded-2xl shadow-card">
             <h3 className={styles.sectionHeadText}>Contact</h3>
             <form
               ref={formRef}
@@ -66,44 +66,44 @@ const Contact = () => {
               className="flex flex-col gap-3"
             >
               <label className="flex flex-col">
-                <span className={styles.formHeadText}>Name</span>
+                <span className={styles.formSubText}>Name</span>
                 <input
                   type="text"
                   name="name"
                   value={form.name}
                   onChange={handleChange}
                   placeholder="Your name"
-                  className={styles.formSubText}
+                  className={styles.formText}
                   required
                 />
               </label>
               <label className="flex flex-col">
-                <span className={styles.formHeadText}>Email</span>
+                <span className={styles.formSubText}>Email</span>
                 <input
                   type="email"
                   name="email"
                   value={form.email}
                   onChange={handleChange}
                   placeholder="Your email"
-                  className={styles.formSubText}
+                  className={styles.formText}
                   required
                 />
               </label>
               <label className="flex flex-col">
-                <span className={styles.formHeadText}>Message</span>
+                <span className={styles.formSubText}>Message</span>
                 <textarea
                   rows="5"
                   name="message"
                   value={form.message}
                   onChange={handleChange}
                   placeholder="Your message"
-                  className={styles.formSubText + ' resize-none'}
+                  className={styles.formText + ' resize-none'}
                   required
                 />
               </label>
               <button
                 type="submit"
-                className="bg-primary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl hover:bg-indigo-950"
+                className={styles.button}
               >
                 {loading ? 'Sending...' : 'Send'}
               </button>
