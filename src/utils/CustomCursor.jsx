@@ -19,7 +19,7 @@ window.mobileCheck = () => {
 const isMobile = window.mobileCheck();
 
 function CustomCursor() {
-  if (isMobile) return null;
+  // if (isMobile) return null;
   return (
     <AnimatedCursor
       innerSize={10}
