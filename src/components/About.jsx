@@ -62,7 +62,7 @@ const About = () => {
               Resume
             </a>
           </div>
-          <div className={`${styles.sectionText} text-left mt-12`}>
+          <div className={`${styles.sectionText} text-left mt-12 text-white`}>
             {about[0].paragraphs.map((paragraph, index) => (
               <div key={index}>
                 {paragraph.text}
