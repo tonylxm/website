@@ -7,7 +7,7 @@ import { about } from "../constants/constants";
 const About = () => {
   return (
     <div className="w-full h-screen flex justify-center items-center bg-secondary">
-      <div className="flex-[0.75] md:flex-[0.5]">
+      <div className="flex-[0.75] lg:flex-[0.5]">
         <Animation>
           <div className="flex justify-center">
             <div>
@@ -57,12 +57,12 @@ const About = () => {
             <a
               href={resume}
               target="_blank"
-              className=" text-lg hover:text-white underline"
+              className={`${styles.sectionText} hover:text-white underline`}
             >
               Resume
             </a>
           </div>
-          <div className="p-12 text-left text-lg">
+          <div className={`${styles.sectionText} text-left mt-12`}>
             {about[0].paragraphs.map((paragraph, index) => (
               <div key={index}>
                 {paragraph.text}
