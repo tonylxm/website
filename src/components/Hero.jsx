@@ -2,8 +2,9 @@ import { styles } from "../styles";
 import { useRef } from "react";
 import { hero } from "../constants/constants";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
-import rangitotoTop from "../assets/rangitoto-top.png";
-import rangitotoBottom from "../assets/rangitoto-bottom.jpg";
+import { useMediaQuery } from '@chakra-ui/react';
+import rangitotoTop from '../assets/rangitoto-top.png';
+import rangitotoBottom from '../assets/rangitoto-bottom.jpg';
 
 const Hero = () => {
   const ref1 = useRef(null);
@@ -15,7 +16,27 @@ const Hero = () => {
     offset: ["start start", "end start"],
   });
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "1000%"]);
+
+  const [isSmallScreen] = useMediaQuery("(max-width: 767px)");
+  const [isMediumScreen] = useMediaQuery("(min-width: 768px) and (max-width: 1023px)");
+  const [isLargeScreen] = useMediaQuery("(min-width: 1024px)");
+
+  const getTextYValue = () => {
+    if (isSmallScreen) {
+      return "2000%";
+    } else if (isMediumScreen) {
+      return "1750%";
+    } else if (isLargeScreen) {
+      return "1000%";
+    }
+    return "1000%"; // Default value for undefined cases
+  };
+
+  const textY = useTransform(
+    scrollYProgress,
+    [0, 1],
+    ["0%", getTextYValue()]
+  );
 
   return (
     <div className="w-full h-screen overflow-hidden relative grid place-items-center">
@@ -40,7 +61,7 @@ const Hero = () => {
       </motion.div>
 
       <div
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-0 brightness-75"
         style={{
           backgroundImage: `url(${rangitotoBottom})`,
           backgroundPosition: "bottom",
@@ -49,7 +70,7 @@ const Hero = () => {
         }}
       />
       <div
-        className="absolute inset-0 z-20"
+        className="absolute inset-0 z-20 brightness-75"
         style={{
           backgroundImage: `url(${rangitotoTop})`,
           backgroundPosition: "bottom",
