@@ -1,5 +1,6 @@
-import { styles } from '../styles';
+import { styles } from "../styles";
 import { useRef } from "react";
+import { hero } from "../constants/constants";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useMediaQuery } from '@chakra-ui/react';
 import rangitotoTop from '../assets/rangitoto-top.png';
@@ -51,8 +52,12 @@ const Hero = () => {
         transition={{ duration: 0.5, delay: 0.15 }}
         className="relative z-10"
       >
-        <h1 className={`${styles.heroHeadText}`}><span className="text-[#ffffff]">Tony Lim</span></h1>
-        <h2 className={`${styles.heroSubText} text-[#ffffff]`}>Software engineer based in Auckland, New Zealand</h2>
+        <h1 className={`${styles.heroHeadText}`}>
+          <span className="text-[#ffffff]">{hero[0].head_text}</span>
+        </h1>
+        <h2 className={`${styles.heroSubText} text-[#ffffff]`}>
+          {hero[0].sub_text}
+        </h2>
       </motion.div>
 
       <div
