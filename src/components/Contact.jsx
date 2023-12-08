@@ -66,38 +66,38 @@ const Contact = () => {
               className="flex flex-col gap-3"
             >
               <label className="flex flex-col">
-                <span className={styles.formHeadText}>Name</span>
+                <span className={styles.formSubText}>Name</span>
                 <input
                   type="text"
                   name="name"
                   value={form.name}
                   onChange={handleChange}
                   placeholder="Your name"
-                  className={styles.formSubText}
+                  className={styles.formText}
                   required
                 />
               </label>
               <label className="flex flex-col">
-                <span className={styles.formHeadText}>Email</span>
+                <span className={styles.formSubText}>Email</span>
                 <input
                   type="email"
                   name="email"
                   value={form.email}
                   onChange={handleChange}
                   placeholder="Your email"
-                  className={styles.formSubText}
+                  className={styles.formText}
                   required
                 />
               </label>
               <label className="flex flex-col">
-                <span className={styles.formHeadText}>Message</span>
+                <span className={styles.formSubText}>Message</span>
                 <textarea
                   rows="5"
                   name="message"
                   value={form.message}
                   onChange={handleChange}
                   placeholder="Your message"
-                  className={styles.formSubText + ' resize-none'}
+                  className={styles.formText + ' resize-none'}
                   required
                 />
               </label>
