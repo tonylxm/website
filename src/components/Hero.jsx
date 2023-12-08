@@ -1,8 +1,9 @@
-import { styles } from '../styles';
+import { styles } from "../styles";
 import { useRef } from "react";
+import { hero } from "../constants/constants";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
-import rangitotoTop from '../assets/rangitoto-top.png';
-import rangitotoBottom from '../assets/rangitoto-bottom.jpg';
+import rangitotoTop from "../assets/rangitoto-top.png";
+import rangitotoBottom from "../assets/rangitoto-bottom.jpg";
 
 const Hero = () => {
   const ref1 = useRef(null);
@@ -30,8 +31,12 @@ const Hero = () => {
         transition={{ duration: 0.5, delay: 0.15 }}
         className="relative z-10"
       >
-        <h1 className={`${styles.heroHeadText}`}><span className="text-[#ffffff]">Tony Lim</span></h1>
-        <h2 className={`${styles.heroSubText} text-[#ffffff]`}>Software engineer based in Auckland, New Zealand</h2>
+        <h1 className={`${styles.heroHeadText}`}>
+          <span className="text-[#ffffff]">{hero[0].head_text}</span>
+        </h1>
+        <h2 className={`${styles.heroSubText} text-[#ffffff]`}>
+          {hero[0].sub_text}
+        </h2>
       </motion.div>
 
       <div
@@ -52,7 +57,7 @@ const Hero = () => {
         }}
       />
     </div>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
