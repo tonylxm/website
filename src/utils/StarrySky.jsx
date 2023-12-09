@@ -62,7 +62,7 @@ const StarrySky = () => {
         x: getRandomX(),
         y: getRandomY(),
       })),
-    [numStars]
+    [numStars, dimensions]
   );
 
   const memoizedShootingStarPositions = useMemo(
@@ -71,7 +71,7 @@ const StarrySky = () => {
         x: getRandomX(),
         y: getRandomY(),
       })),
-    [numShootingStars]
+    [numShootingStars, dimensions]
   );
 
   return (
