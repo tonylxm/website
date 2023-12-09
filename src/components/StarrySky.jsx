@@ -73,7 +73,7 @@ const StarrySky = () => {
       <div
         className="absolute inset-0 w-full h-screen overflow-hidden"
         style={{
-          transform: "translateX(calc(50vw - 50%)) translateY(calc(50vh - 50%)) rotate(120deg)",
+          transform: "translateX(calc(50vw - 50%)) translateY(calc(50vh - 60%)) rotate(120deg)",
         }}
       >
         {[...Array(numShootingStars)].map((_, index) => (
@@ -83,10 +83,8 @@ const StarrySky = () => {
             style={{
               left: `${getRandomY()}px`,
               top: `${getRandomX()}px`,
-              position: "absolute",
               background: "linear-gradient(-45deg, white, rgba(0, 0, 255, 0))",
               filter: "drop-shadow(0 0 6px white)",
-              overflow: "hidden",
             }}
           />
         ))}

@@ -8,17 +8,13 @@ import {
   Contact,
   Footer,
 } from "./components";
-import StarrySky from "./components/StarrySky";
 
 const App = () => {
   return (
     <BrowserRouter>
       <CustomCursor />
       <div className="relative z-0 bg-primary">
-        <div className="bg-cover bg-no-repeat bg-center">
-          <Hero />
-          <StarrySky />
-        </div>
+        <Hero />
         <About />
         <TechStack />
         <Projects />
