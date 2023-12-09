@@ -13,7 +13,7 @@ const About = () => {
             <div>
               <img
                 src={profile}
-                className="rounded-full"
+                className="rounded-full pointer-events-none"
                 width="250"
                 height="250"
               />
