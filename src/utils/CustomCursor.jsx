@@ -1,6 +1,6 @@
 import AnimatedCursor from "react-animated-cursor";
 
-function isTouchDevice() {
+export function isTouchDevice() {
   return (
     "ontouchstart" in window ||
     navigator.maxTouchPoints > 0 ||
