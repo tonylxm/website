@@ -25,9 +25,9 @@ const Hero = () => {
 
   const getTextYValue = () => {
     if (isSmallScreen) {
-      return "2000%";
+      return "1500%";
     } else if (isMediumScreen) {
-      return "1750%";
+      return "1250%";
     } else if (isLargeScreen) {
       return "1000%";
     }
