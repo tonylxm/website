@@ -36,7 +36,7 @@ const Hero = () => {
 
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", getTextYValue()]);
-  const starsY = useTransform(scrollYProgress, [0, 0.5], ["0%", "75%"]);
+  const starsY = useTransform(scrollYProgress, [0, 1], ["0%", "75%"]);
 
   return (
     <div className="w-full h-screen overflow-hidden relative grid content-center">
@@ -53,7 +53,7 @@ const Hero = () => {
         className="relative z-10"
       >
         <h1 className={`${styles.heroHeadText}`}>
-          <span className="text-[#ffffff]">{hero[0].head_text}</span>
+          <span className="text-[#ffe6d7]">{hero[0].head_text}</span>
         </h1>
         <h2 className={`${styles.heroSubText} text-[#d8e1ff] mx-20`}>
           {hero[0].sub_text}
