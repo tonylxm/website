@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useMemo } from "react";
 import anime from "animejs";
+import { isTouchDevice } from "./CustomCursor";
 
 const StarrySky = () => {
   const [numStars] = useState(75);
@@ -45,6 +46,8 @@ const StarrySky = () => {
   };
 
   useEffect(() => {
+    if (isTouchDevice()) return;
+    
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
