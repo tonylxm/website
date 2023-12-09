@@ -14,9 +14,7 @@ const App = () => {
     <BrowserRouter>
       <CustomCursor />
       <div className="relative z-0 bg-primary">
-        <div className="bg-hero-patern bg-cover bg-no-repeat bg-center">
-          <Hero />
-        </div>
+        <Hero />
         <About />
         <TechStack />
         <Projects />
