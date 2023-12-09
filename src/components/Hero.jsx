@@ -36,7 +36,7 @@ const Hero = () => {
 
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", getTextYValue()]);
-  const starsY = useTransform(scrollYProgress, [0, 0.5], ["0%", "100%"]);
+  const starsY = useTransform(scrollYProgress, [0, 0.5], ["0%", "75%"]);
 
   return (
     <div className="w-full h-screen overflow-hidden relative grid content-center">
@@ -48,7 +48,7 @@ const Hero = () => {
         }}
         ref={ref1}
         initial="hidden"
-        animate={isInView ? "fadeIn" : "hidden"}
+        animate="fadeIn"
         transition={{ duration: 0.5, delay: 0.15 }}
         className="relative z-10"
       >
@@ -70,9 +70,17 @@ const Hero = () => {
         }}
       />
 
-      <motion.div 
-        className="absolute inset-0 z-20" 
+      <motion.div
         style={{ y: starsY }}
+        variants={{
+          hidden: { opacity: 0 },
+          fadeIn: { opacity: 1 },
+        }}
+        ref={ref1}
+        initial="hidden"
+        animate={isInView ? "fadeIn" : "hidden"}
+        transition={{ duration: 0.5, delay: 0.5 }}
+        className="absolute inset-0 z-20"
       >
         <StarrySky />
       </motion.div>
