@@ -30,10 +30,10 @@ function CustomCursor() {
       trailingSpeed={5}
       hasBlendMode={true}
       innerStyle={{
-        backgroundColor: "#F7C465",
+        backgroundColor: "#fa8319",
       }}
       outerStyle={{
-        border: "3px solid #F7C465",
+        border: "3px solid #fa8319",
       }}
       clickables={[
         "a",
