@@ -2,6 +2,7 @@
   "name": "personal-website",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://tonylxm.com/",
   "type": "module",
   "scripts": {
     "dev": "vite",
