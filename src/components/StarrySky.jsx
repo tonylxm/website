@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import anime from "animejs";
 
 const StarrySky = () => {
@@ -56,33 +56,51 @@ const StarrySky = () => {
     shootingStars();
   }, []);
 
+  const memoizedStarPositions = useMemo(
+    () =>
+      Array.from({ length: numStars }, (_, index) => ({
+        x: getRandomX(),
+        y: getRandomY(),
+      })),
+    [numStars]
+  );
+
+  const memoizedShootingStarPositions = useMemo(
+    () =>
+      Array.from({ length: numShootingStars }, (_, index) => ({
+        x: getRandomX(),
+        y: getRandomY(),
+      })),
+    [numShootingStars]
+  );
+
   return (
     <div>
-      <svg className="absolute inset-0 w-full h-screen">
-        {[...Array(numStars)].map((_, index) => (
+      <svg className="w-full h-screen">
+        {memoizedStarPositions.map(({ x, y }, index) => (
           <circle
             key={index}
             className="star"
-            cx={getRandomX()}
-            cy={getRandomY()}
+            cx={x}
+            cy={y}
             r={Math.random() * 0.7 + 1}
             fill="white"
           />
         ))}
       </svg>
       <div
-        className="absolute inset-0 w-full h-screen overflow-hidden"
+        className="absolute inset-0 w-full h-screen"
         style={{
           transform: "translateX(calc(50vw - 50%)) translateY(calc(50vh - 60%)) rotate(120deg)",
         }}
       >
-        {[...Array(numShootingStars)].map((_, index) => (
+        {memoizedShootingStarPositions.map(({ x, y }, index) => (
           <div
             key={index}
             className="wish absolute w-0 h-0.5"
             style={{
-              left: `${getRandomY()}px`,
-              top: `${getRandomX()}px`,
+              left: `${y}px`,
+              top: `${x}px`,
               background: "linear-gradient(-45deg, white, rgba(0, 0, 255, 0))",
               filter: "drop-shadow(0 0 6px white)",
             }}

@@ -16,7 +16,6 @@ const Hero = () => {
     target: ref2,
     offset: ["start start", "end start"],
   });
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   const [isSmallScreen] = useMediaQuery("(max-width: 767px)");
   const [isMediumScreen] = useMediaQuery(
@@ -32,13 +31,15 @@ const Hero = () => {
     } else if (isLargeScreen) {
       return "1000%";
     }
-    return "1000%"; // Default value for undefined cases
+    return "1000%";
   };
 
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", getTextYValue()]);
+  const starsY = useTransform(scrollYProgress, [0, 0.5], ["0%", "100%"]);
 
   return (
-    <div className="w-full h-screen overflow-hidden relative grid content-center" >
+    <div className="w-full h-screen overflow-hidden relative grid content-center">
       <motion.div
         style={{ y: textY }}
         variants={{
@@ -68,9 +69,14 @@ const Hero = () => {
           y: backgroundY,
         }}
       />
-      <div className="z-20">
+
+      <motion.div 
+        className="absolute inset-0 z-20" 
+        style={{ y: starsY }}
+      >
         <StarrySky />
-      </div>
+      </motion.div>
+
       <div
         className="absolute inset-0 z-30 brightness-75"
         style={{
