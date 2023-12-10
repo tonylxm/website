@@ -7,6 +7,17 @@ export const hero = [
 
 export const about = [
   {
+    titles: [
+      "Software Engineer",
+      "SESA President",
+      "Penultimate Software Engineering Student",
+      "Foodie",
+      "Software Development Intern",
+      "Hooper",
+      "Coffee Lover",
+      "Full Stack Developer",
+      "Innovator",
+    ],
     paragraphs: [
       {
         text: "I am a software development intern at ",

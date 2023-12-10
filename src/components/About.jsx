@@ -3,6 +3,7 @@ import profile from "../assets/profile.jpg";
 import resume from "../assets/Tony Lim Resume.pdf";
 import Animation from "../utils/Animation";
 import { about } from "../constants/constants";
+import TyperwriterEffect from "../utils/TyperwriterEffect";
 
 const About = () => {
   return (
@@ -19,7 +20,10 @@ const About = () => {
               />
             </div>
           </div>
-          <div className="flex mt-6 justify-center items-center text-tertiary">
+          <div className={`${styles.sectionText} flex mt-3 justify-center items-center font-semibold text-white text-center`}>
+            <TyperwriterEffect titles={about[0].titles} />
+          </div>
+          <div className="flex mt-3 justify-center items-center text-tertiary">
             <a
               href="https://www.linkedin.com/in/tonylxm/"
               target="_blank"
@@ -39,7 +43,7 @@ const About = () => {
             <a
               href="https://github.com/tonylxm"
               target="_blank"
-              className="text-tertiary hover:text-white ms-5"
+              className="hover:text-white ms-5"
             >
               <svg
                 className="w-6 h-6"
