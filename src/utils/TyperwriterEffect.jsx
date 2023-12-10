@@ -1,27 +1,20 @@
 import React, { useState, useEffect } from "react";
+import { TYPING_SPEED, DELETING_SPEED, WAIT_BEFORE_DELETE } from "./TypewriterSpeeds";
 
-const TypewriterEffect = ({ titles, onTextCompletionPercentageChange }) => {
+const TypewriterEffect = ({ titles, onTypingFinish }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
-  const [textCompletionPercentage, setTextCompletionPercentage] = useState(0);
 
   useEffect(() => {
     let index = 0;
     let timeoutId;
 
-    const TYPING_SPEED = 100;
-    const DELETING_SPEED = 50;
-    const WAIT_BEFORE_DELETE = 2000;
-
     const typeNextLetter = () => {
       if (index < titles[currentIndex].title.length) {
-        index++;
-        timeoutId = setTimeout(typeNextLetter, TYPING_SPEED);
         setDisplayedText((prevText) => {
-          const newText = prevText + titles[currentIndex].title[index - 1];
-          const completionPercentage = (newText.length / titles[currentIndex].title.length) * 100;
-          setTextCompletionPercentage(completionPercentage);
-          onTextCompletionPercentageChange(completionPercentage); // Notify the parent component
+          const newText = prevText + titles[currentIndex].title[index];
+          index++;
+          timeoutId = setTimeout(typeNextLetter, TYPING_SPEED);
           return newText;
         });
       } else {
@@ -32,10 +25,6 @@ const TypewriterEffect = ({ titles, onTextCompletionPercentageChange }) => {
     const deleteNextLetter = () => {
       setDisplayedText((prevText) => {
         const newText = prevText.slice(0, -1);
-        const completionPercentage = (newText.length / titles[currentIndex].title.length) * 100;
-        setTextCompletionPercentage(completionPercentage);
-        onTextCompletionPercentageChange(completionPercentage);
-
         if (newText.length > 0) {
           timeoutId = setTimeout(deleteNextLetter, DELETING_SPEED);
         } else {
@@ -46,9 +35,11 @@ const TypewriterEffect = ({ titles, onTextCompletionPercentageChange }) => {
     };
 
     typeNextLetter();
+    onTypingFinish(currentIndex);
 
     return () => {
       clearTimeout(timeoutId);
+      setDisplayedText("");
     };
   }, [titles, currentIndex]);
 

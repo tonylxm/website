@@ -1,4 +1,4 @@
-import { code, sesa } from "../assets/about-bgs";
+import { code, sesa, foodie, coffee, hooper, leader, uoa, p1ac } from "../assets/about-bgs";
 
 export const hero = [
   {
@@ -18,31 +18,27 @@ export const titles = [
   },
   {
     title: "Foodie",
-    img: "hi.png",
+    img: foodie,
+  },
+  {
+    title: "Leader & Change Maker",
+    img: leader,
   },
   {
     title: "Penultimate Software Engineering Student",
-    img: "hi.png",
+    img: uoa,
   },
   {
     title: "Engineering Tutor",
-    img: "hi.png",
-  },
-  {
-    title: "Software Development Intern",
-    img: "hi.png",
+    img: p1ac,
   },
   {
     title: "Hooper",
-    img: "hi.png",
+    img: hooper,
   },
   {
     title: "Coffee Lover",
-    img: "hi.png",
-  },
-  {
-    title: "Innovator",
-    img: "hi.png",
+    img: coffee,
   },
 ];
 
