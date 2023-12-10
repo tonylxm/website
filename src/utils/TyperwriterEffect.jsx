@@ -39,6 +39,7 @@ const TypewriterTitle = ({ titles }) => {
 
     return () => {
       clearTimeout(timeoutId);
+      setDisplayedText("");
     };
   }, [titles, currentIndex]);
 

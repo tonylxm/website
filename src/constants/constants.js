@@ -12,6 +12,7 @@ export const about = [
       "SESA President",
       "Penultimate Software Engineering Student",
       "Foodie",
+      "Engineering Tutor",
       "Software Development Intern",
       "Hooper",
       "Coffee Lover",
@@ -29,13 +30,13 @@ export const about = [
           ", an award-winning healthtech company working to reduce wait times and overcrowding in hospitals, urgent care clinics and emergency departments. I'm passionate about contributing to building products that make a real difference in people's lives.",
       },
       {
-        text: "I am also the President of ",
+        text: "For 2024, I am the President of ",
         link: {
           url: "https://www.sesa.org.nz/",
           text: "SESA",
         },
         additionalText:
-          ", the Software Engineering Students Association at the University of Auckland for 2024.",
+          " - the Software Engineering Students Association at the University of Auckland.",
       },
     ],
   },
