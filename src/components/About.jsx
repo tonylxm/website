@@ -2,16 +2,30 @@ import { styles } from "../styles";
 import profile from "../assets/profile.jpg";
 import resume from "../assets/Tony Lim Resume.pdf";
 import Animation from "../utils/Animation";
-import { about } from "../constants/constants";
+import { titles, about } from "../constants/constants";
 import TyperwriterEffect from "../utils/TyperwriterEffect";
+import { useState } from "react";
 
 const About = () => {
+  const [completionPercentage, setCompletionPercentage] = useState(0);
+
+  const handleTextCompletionPercentageChange = (percentage) => {
+    setCompletionPercentage(percentage);
+  };
+
   return (
-    <div className="w-full h-screen flex justify-center items-center bg-secondary">
+    <div 
+      className="w-full h-screen flex justify-center items-centerbg-secondary" 
+      style={{
+        backgroundImage: `url(${titles[1].img})`,
+        backgroundPosition: "top",
+        backgroundSize: "cover",
+      }}
+    >
       <div className="flex-[0.75] lg:flex-[0.5]">
         <Animation>
-          <div className="bg-primary p-4 rounded-2xl shadow-card">
-            <div className="flex justify-center">
+          <div className="bg-secondary p-4 rounded-2xl shadow-card bg-opacity-75">
+            <div className="flex justify-center bg-opacity-100">
               <div>
                 <img
                   src={profile}
@@ -24,7 +38,10 @@ const About = () => {
             <div
               className={`${styles.sectionText} flex mt-3 justify-center items-center font-semibold text-white text-center`}
             >
-              <TyperwriterEffect titles={about[0].titles} />
+               <TyperwriterEffect
+                titles={titles}
+                onTextCompletionPercentageChange={handleTextCompletionPercentageChange}
+              />
             </div>
             <div className="flex mt-3 justify-center items-center text-tertiary">
               <a

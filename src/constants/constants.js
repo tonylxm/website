@@ -1,24 +1,53 @@
+import { code, sesa } from "../assets/about-bgs";
+
 export const hero = [
   {
-    head_text: "Tony Lim",
-    sub_text: "Software engineer based in Auckland, New Zealand",
+    headText: "Tony Lim",
+    subText: "Software engineer based in Auckland, New Zealand",
+  },
+];
+
+export const titles = [
+  {
+    title: "Software Engineer",
+    img: code,
+  },
+  {
+    title: "SESA President",
+    img: sesa,
+  },
+  {
+    title: "Foodie",
+    img: "hi.png",
+  },
+  {
+    title: "Penultimate Software Engineering Student",
+    img: "hi.png",
+  },
+  {
+    title: "Engineering Tutor",
+    img: "hi.png",
+  },
+  {
+    title: "Software Development Intern",
+    img: "hi.png",
+  },
+  {
+    title: "Hooper",
+    img: "hi.png",
+  },
+  {
+    title: "Coffee Lover",
+    img: "hi.png",
+  },
+  {
+    title: "Innovator",
+    img: "hi.png",
   },
 ];
 
 export const about = [
   {
-    titles: [
-      "Software Engineer",
-      "SESA President",
-      "Penultimate Software Engineering Student",
-      "Foodie",
-      "Engineering Tutor",
-      "Software Development Intern",
-      "Hooper",
-      "Coffee Lover",
-      "Full Stack Developer",
-      "Innovator",
-    ],
     paragraphs: [
       {
         text: "I am a software development intern at ",
