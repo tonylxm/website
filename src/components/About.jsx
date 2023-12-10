@@ -1,16 +1,72 @@
+import React, { useState, useEffect } from "react";
 import { styles } from "../styles";
 import profile from "../assets/profile.jpg";
 import resume from "../assets/Tony Lim Resume.pdf";
 import Animation from "../utils/Animation";
-import { about } from "../constants/constants";
-import TyperwriterEffect from "../utils/TyperwriterEffect";
+import { titles, about } from "../constants/constants";
+import TypewriterEffect from "../utils/TyperwriterEffect";
+import { TYPING_SPEED, DELETING_SPEED, WAIT_BEFORE_DELETE } from "../utils/TypewriterSpeeds";
+import { motion } from "framer-motion";
 
 const About = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+  }, [currentIndex]);
+
+  const handleTypingFinish = (index) => {
+    setCurrentIndex(index);
+  };
+
+  const calculateBackgroundTransitionSpeed = () => {
+    return (
+      ((TYPING_SPEED + DELETING_SPEED) * titles[currentIndex].title.length + (WAIT_BEFORE_DELETE / 2)) / 1000
+    );
+  };
+    
+  console.log(calculateBackgroundTransitionSpeed());
+  console.log(currentIndex);
+  console.log(titles[currentIndex].title.length);
+
+  const backgroundImageStyle = {
+    backgroundImage: `url(${titles[currentIndex].img})`,
+    backgroundPosition: "top",
+    backgroundSize: "cover",
+  };
+
   return (
-    <div className="w-full h-screen flex justify-center items-center bg-secondary">
-      <div className="flex-[0.75] lg:flex-[0.5]">
+    <div className="w-full h-screen flex justify-center items-center bg-secondary z-0">
+      <motion.div
+        className="w-full h-screen absolute z-10 brightness-50"
+        style={backgroundImageStyle}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1 },
+        }}
+        key={titles[currentIndex].title}
+        initial="hidden"
+        animate="visible"
+        transition={{
+          duration: `${calculateBackgroundTransitionSpeed()}`,
+        }}
+      />
+      <motion.div
+        className="w-full h-screen absolute z-10 brightness-50"
+        style={backgroundImageStyle}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1 },
+        }}
+        key={titles[currentIndex].title}
+        initial="hidden"
+        animate="visible"
+        transition={{
+          duration: `${calculateBackgroundTransitionSpeed()}`,
+        }}
+      />
+      <div className="flex-[0.75] lg:flex-[0.5] z-20">
         <Animation>
-          <div className="bg-primary p-4 rounded-2xl shadow-card">
+          <div className="bg-secondary p-4 rounded-2xl shadow-card bg-opacity-80">
             <div className="flex justify-center">
               <div>
                 <img
@@ -24,7 +80,7 @@ const About = () => {
             <div
               className={`${styles.sectionText} flex mt-3 justify-center items-center font-semibold text-white text-center`}
             >
-              <TyperwriterEffect titles={about[0].titles} />
+              <TypewriterEffect titles={titles} currentIndex={currentIndex} onTypingFinish={handleTypingFinish}/>
             </div>
             <div className="flex mt-3 justify-center items-center text-tertiary">
               <a

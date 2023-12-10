@@ -1,34 +1,33 @@
 import React, { useState, useEffect } from "react";
+import { TYPING_SPEED, DELETING_SPEED, WAIT_BEFORE_DELETE } from "./TypewriterSpeeds";
 
-const TypewriterTitle = ({ titles }) => {
+const TypewriterEffect = ({ titles, onTypingFinish }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
     let index = 0;
     let timeoutId;
 
     const typeNextLetter = () => {
-      if (index < titles[currentIndex].length) {
-        index++;
-        timeoutId = setTimeout(typeNextLetter, 100); // Adjust speed if needed
-        setDisplayedText(
-          (prevText) => prevText + titles[currentIndex][index - 1]
-        );
+      if (index < titles[currentIndex].title.length) {
+        setDisplayedText((prevText) => {
+          const newText = prevText + titles[currentIndex].title[index];
+          index++;
+          timeoutId = setTimeout(typeNextLetter, TYPING_SPEED);
+          return newText;
+        });
       } else {
-        timeoutId = setTimeout(deleteNextLetter, 2000); // Adjust speed if needed
+        timeoutId = setTimeout(deleteNextLetter, WAIT_BEFORE_DELETE);
       }
     };
 
     const deleteNextLetter = () => {
       setDisplayedText((prevText) => {
         const newText = prevText.slice(0, -1);
-
         if (newText.length > 0) {
-          timeoutId = setTimeout(deleteNextLetter, 50); // Adjust speed if needed
+          timeoutId = setTimeout(deleteNextLetter, DELETING_SPEED);
         } else {
-          setIsDeleting(false);
           setCurrentIndex((prevIndex) => (prevIndex + 1) % titles.length);
         }
         return newText;
@@ -36,6 +35,7 @@ const TypewriterTitle = ({ titles }) => {
     };
 
     typeNextLetter();
+    onTypingFinish(currentIndex);
 
     return () => {
       clearTimeout(timeoutId);
@@ -46,4 +46,4 @@ const TypewriterTitle = ({ titles }) => {
   return <p>{displayedText}</p>;
 };
 
-export default TypewriterTitle;
+export default TypewriterEffect;

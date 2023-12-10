@@ -53,10 +53,10 @@ const Hero = () => {
         className="relative z-10"
       >
         <h1 className={`${styles.heroHeadText}`}>
-          <span className="text-[#ffede2]">{hero[0].head_text}</span>
+          <span className="text-[#ffede2]">{hero[0].headText}</span>
         </h1>
         <h2 className={`${styles.heroSubText} text-[#d2dcff] mx-20`}>
-          {hero[0].sub_text}
+          {hero[0].subText}
         </h2>
       </motion.div>
 
@@ -74,11 +74,11 @@ const Hero = () => {
         style={{ y: starsY }}
         variants={{
           hidden: { opacity: 0 },
-          fadeIn: { opacity: 1 },
+          visible: { opacity: 1 },
         }}
         ref={ref1}
         initial="hidden"
-        animate={isInView ? "fadeIn" : "hidden"}
+        animate={isInView ? "visible" : "hidden"}
         transition={{ duration: 0.5, delay: 0.5 }}
         className="absolute inset-0 z-20"
       >
