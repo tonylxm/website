@@ -7,32 +7,9 @@ import { titles, about } from "../constants/constants";
 import TypewriterEffect from "../utils/TyperwriterEffect";
 import { TYPING_SPEED } from "../utils/TypewriterSpeeds";
 import { useSpring, animated } from "react-spring";
-import { motion } from "framer-motion";
 
 const About = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  // useEffect(() => {}, [currentIndex]);
-
-  // Check if cache is working as intended
-  // useEffect(() => {
-  //   const img = [...titles.map((title) => title.img), profile]
-  //   console.log(img)
-  //   cacheImages(img);
-  // }, []);
-
-  // const cacheImages = async (imgCacheArray) => {
-  //   const promises = await imgCacheArray.map((src) => {
-  //     return new Promise((resolve, reject) => {
-  //       const img = new Image();
-  //       img.src = src;
-  //       img.onload = resolve();
-  //       img.onerror = reject();
-  //     });
-  //   });
-  //   await Promise.all(promises);
-  //   console.log("Images cached!");
-  // };
 
   const handleTypingFinish = (index) => {
     setCurrentIndex(index);
