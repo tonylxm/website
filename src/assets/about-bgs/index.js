@@ -6,3 +6,4 @@ export { default as hooper } from "./hooper.jpg";
 export { default as leader } from "./leader.jpg";
 export { default as uoa } from "./uoa.jpg";
 export { default as p1ac } from "./P1AC.png";
+export { default as bg } from "./bg.png";
