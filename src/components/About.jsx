@@ -11,6 +11,26 @@ import { useSpring, animated } from "react-spring";
 const About = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  useEffect(() => {}, [currentIndex]);
+
+  useEffect(() => {
+    const img = [...titles.map((title) => title.img), profile]
+    cacheImages(img);
+  }, []);
+
+  const cacheImages = async (imgCacheArray) => {
+    const promises = await imgCacheArray.map((src) => {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.src = src;
+        img.onload = resolve();
+        img.onerror = reject();
+      });
+    });
+    await Promise.all(promises);
+    console.log("Images cached!");
+  };
+
   const handleTypingFinish = (index) => {
     setCurrentIndex(index);
   };
