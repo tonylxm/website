@@ -50,13 +50,13 @@ export const about = [
   {
     paragraphs: [
       {
-        text: "I am a software development intern at ",
+        text: "I am passionate about building solutions that make a positive difference in people's lives. Currently, I achieve this as software development intern at ",
         link: {
           url: "https://www.emergencyq.com/",
           text: "Emergency Q",
         },
         additionalText:
-          ", an award-winning healthtech company working to reduce wait times and overcrowding in hospitals, urgent care clinics and emergency departments. I'm passionate about contributing to building products that make a real difference in people's lives.",
+          ", an award-winning healthtech company that reduces wait times and overcrowding in hospitals, emergency departments and urgent care clinics.",
       },
       {
         text: "For 2024, I am the President of ",
