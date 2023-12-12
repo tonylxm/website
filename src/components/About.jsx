@@ -5,63 +5,69 @@ import resume from "../assets/Tony Lim Resume.pdf";
 import Animation from "../utils/Animation";
 import { titles, about } from "../constants/constants";
 import TypewriterEffect from "../utils/TyperwriterEffect";
-import { TYPING_SPEED, DELETING_SPEED, WAIT_BEFORE_DELETE } from "../utils/TypewriterSpeeds";
-import { motion } from "framer-motion";
+import { TYPING_SPEED } from "../utils/TypewriterSpeeds";
+import { useSpring, animated } from "react-spring";
 
 const About = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  useEffect(() => {}, [currentIndex]);
+
   useEffect(() => {
-  }, [currentIndex]);
+    const img = [...titles.map((title) => title.img), profile]
+    cacheImages(img);
+  }, []);
+
+  const cacheImages = async (imgCacheArray) => {
+    const promises = await imgCacheArray.map((src) => {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.src = src;
+        img.onload = resolve();
+        img.onerror = reject();
+      });
+    });
+    await Promise.all(promises);
+    console.log("Images cached!");
+  };
 
   const handleTypingFinish = (index) => {
     setCurrentIndex(index);
   };
 
   const calculateBackgroundTransitionSpeed = () => {
-    return (
-      ((TYPING_SPEED + DELETING_SPEED) * titles[currentIndex].title.length + (WAIT_BEFORE_DELETE / 2)) / 1000
-    );
+    return TYPING_SPEED * titles[currentIndex].title.length;
   };
-    
-  console.log(calculateBackgroundTransitionSpeed());
-  console.log(currentIndex);
-  console.log(titles[currentIndex].title.length);
+
+  const fadeOut = useSpring({
+    from: { opacity: 1 },
+    to: { opacity: 0 },
+    reset: true,
+    config: { duration: calculateBackgroundTransitionSpeed() },
+  });
 
   const backgroundImageStyle = {
-    backgroundImage: `url(${titles[currentIndex].img})`,
     backgroundPosition: "top",
     backgroundSize: "cover",
   };
 
   return (
-    <div className="w-full h-screen flex justify-center items-center bg-secondary z-0">
-      <motion.div
-        className="w-full h-screen absolute z-10 brightness-50"
-        style={backgroundImageStyle}
-        variants={{
-          hidden: { opacity: 0 },
-          visible: { opacity: 1 },
-        }}
-        key={titles[currentIndex].title}
-        initial="hidden"
-        animate="visible"
-        transition={{
-          duration: `${calculateBackgroundTransitionSpeed()}`,
+    <div className="w-full h-screen flex justify-center items-center z-0">
+      <animated.div
+        className="w-full h-screen absolute z-20 brightness-50"
+        style={{
+          backgroundImage: `url(${
+            titles[(currentIndex - 1 + titles.length) % titles.length].img
+          })`,
+          ...backgroundImageStyle,
+          ...fadeOut,
         }}
       />
-      <motion.div
+      <animated.div
         className="w-full h-screen absolute z-10 brightness-50"
-        style={backgroundImageStyle}
-        variants={{
-          hidden: { opacity: 0 },
-          visible: { opacity: 1 },
-        }}
-        key={titles[currentIndex].title}
-        initial="hidden"
-        animate="visible"
-        transition={{
-          duration: `${calculateBackgroundTransitionSpeed()}`,
+        style={{
+          backgroundImage: `url(${titles[currentIndex].img})`,
+          ...backgroundImageStyle,
         }}
       />
       <div className="flex-[0.75] lg:flex-[0.5] z-20">
@@ -80,7 +86,11 @@ const About = () => {
             <div
               className={`${styles.sectionText} flex mt-3 justify-center items-center font-semibold text-white text-center`}
             >
-              <TypewriterEffect titles={titles} currentIndex={currentIndex} onTypingFinish={handleTypingFinish}/>
+              <TypewriterEffect
+                titles={titles}
+                currentIndex={currentIndex}
+                onTypingFinish={handleTypingFinish}
+              />
             </div>
             <div className="flex mt-3 justify-center items-center text-tertiary">
               <a

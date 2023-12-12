@@ -1,4 +1,4 @@
-import { code, sesa, foodie, coffee, hooper, leader, uoa, p1ac } from "../assets/about-bgs";
+import { code, sesa, foodie, coffee, hooper, leader, uoa, p1ac, bg } from "../assets/about-bgs";
 
 export const hero = [
   {
@@ -13,7 +13,7 @@ export const titles = [
     img: code,
   },
   {
-    title: "SESA President",
+    title: "President of SESA",
     img: sesa,
   },
   {
@@ -40,6 +40,10 @@ export const titles = [
     title: "Coffee Lover",
     img: coffee,
   },
+  {
+    title: "Tony Lim",
+    img: bg,
+  }
 ];
 
 export const about = [
