@@ -46,7 +46,7 @@ const StarrySky = () => {
   };
 
   useEffect(() => {
-    if (isTouchDevice()) return;
+    // if (isTouchDevice()) return;
     
     window.addEventListener("resize", handleResize);
     return () => {

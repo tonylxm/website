@@ -36,7 +36,7 @@ const Hero = () => {
 
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", getTextYValue()]);
-  const starsY = useTransform(scrollYProgress, [0, 1], ["0%", "75%"]);
+  const starsY = useTransform(scrollYProgress, [0, 1], ["0%", "90%"]);
 
   return (
     <div className="w-full h-screen overflow-hidden relative grid content-center">
@@ -55,7 +55,7 @@ const Hero = () => {
         <h1 className={`${styles.heroHeadText}`}>
           <span className="text-[#ffede2]">{hero[0].headText}</span>
         </h1>
-        <h2 className={`${styles.heroSubText} text-[#d2dcff] mx-20`}>
+        <h2 className={`${styles.heroSubText}`}>
           {hero[0].subText}
         </h2>
       </motion.div>
