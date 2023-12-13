@@ -55,10 +55,10 @@ const Contact = () => {
   }
 
   return (
-    <div className="xl:flex-row overflow-hidden w-full h-screen flex justify-center items-center pt-20">
-      <div className="flex-[0.75] lg:flex-[0.5]">
+    <div className={`${styles.screen} xl:flex-row pt-20`}>
+      <div className="flex-[0.75] md:flex-[0.65] lg:flex-[0.5]">
         <Animation>
-          <div className="bg-secondary p-4 rounded-2xl shadow-card">
+          <div className={styles.card}>
             <h3 className={styles.sectionHeadText}>Contact</h3>
             <form
               ref={formRef}
