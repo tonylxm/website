@@ -28,7 +28,6 @@ const About = () => {
       });
     });
     await Promise.all(promises);
-    console.log("Images cached!");
   };
 
   const handleTypingFinish = (index) => {
