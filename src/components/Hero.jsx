@@ -50,7 +50,7 @@ const Hero = () => {
         initial="hidden"
         animate="fadeIn"
         transition={{ duration: 0.5, delay: 0.15 }}
-        className="relative z-10"
+        className="relative z-10 mb-[6%]"
       >
         <h1 className={`${styles.heroHeadText}`}>
           <span className="text-[#ffede2]">{hero[0].headText}</span>
