@@ -1,3 +1,5 @@
+import { react, firebase, tailwind, java, css3} from "./index.js"
+
 export const LinkedInSvg = () => {
   return (
     <a
@@ -89,7 +91,7 @@ export const ColourReactSvg = () => {
     <img
       className="h-7"
       aria-hidden="true"
-      src="src/assets/colour-svgs/react.svg"
+      src={react}
       title="React"
     />
   );
@@ -100,7 +102,7 @@ export const FirebaseSvg = () => {
     <img
       className="h-6"
       aria-hidden="true"
-      src="src/assets/colour-svgs/firebase.svg"
+      src={firebase}
       title="Firebase"
     />
   );
@@ -111,7 +113,7 @@ export const ColourTailwindCSSSvg = () => {
     <img
       className="h-7"
       aria-hidden="true"
-      src="src/assets/colour-svgs/tailwind.svg"
+      src={tailwind}
       title="Tailwind CSS"
     />
   );
@@ -122,7 +124,7 @@ export const JavaSvg = () => {
     <img
       className="h-6"
       aria-hidden="true"
-      src="src/assets/colour-svgs/java.svg"
+      src={java}
       title="Java"
     />
   );
@@ -133,7 +135,7 @@ export const CSS3Svg = () => {
     <img
       className="h-6"
       aria-hidden="true"
-      src="src/assets/colour-svgs/css3.svg"
+      src={css3}
       title="CSS3"
     />
   );

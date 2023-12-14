@@ -56,7 +56,7 @@ const Contact = () => {
 
   return (
     <div className={`${styles.screen} xl:flex-row pt-20`}>
-      <div className="flex-[0.8] lg:flex-[0.5]">
+      <div className="flex-[0.85] lg:flex-[0.5]">
         <Animation>
           <div className={`${styles.card} bg-secondary`}>
             <h3 className={styles.sectionHeadText}>Contact</h3>
