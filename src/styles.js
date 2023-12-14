@@ -10,8 +10,8 @@ const styles = {
   aboutBackground: "w-full h-screen absolute brightness-[0.4]",
   backgroundImageStyle: { backgroundPosition: "top", backgroundSize: "cover"},
 
-  projectDiv: "relative mx-4 md:mx-7 lg:mx-10 mt-5 hover:brightness-[1.4]",
-  projectCard: "h-80 w-full rounded-2xl shadow-card brightness-[0.3] object-cover",
+  projectDiv: "relative mx-4 md:mx-24 lg:mx-10 mt-5 hover:brightness-[1.4]",
+  projectCard: "h-60 lg:h-80 w-full rounded-2xl shadow-card brightness-[0.3] object-cover",
   projectTitle: "text-white font-bold absolute top-5 px-5 text-xl lg:text-[25px]",
   projectText: "text-white absolute top-14 px-5",
   projectTechStack: "text-tertiary absolute bottom-5 px-5 flex items-center",

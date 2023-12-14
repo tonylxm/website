@@ -70,7 +70,7 @@ const About = () => {
           ...styles.backgroundImageStyle,
         }}
       />
-      <div className="flex-[0.85] sm:flex-[0.75] md:flex-[0.65] lg:flex-[0.5] z-20 overflow-hidden">
+      <div className="flex-[0.85] md:flex-[0.65] lg:flex-[0.5] z-20 overflow-hidden">
         <Animation>
           <div className="flex justify-center">
             <img
