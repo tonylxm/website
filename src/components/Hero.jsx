@@ -53,10 +53,10 @@ const Hero = () => {
         className="relative z-10 mb-[6%]"
       >
         <h1 className={`${styles.heroHeadText}`}>
-          <span className="text-[#ffede2]">{hero[0].headText}</span>
+          <span>{hero[0].head_text}</span>
         </h1>
         <h2 className={`${styles.heroSubText}`}>
-          {hero[0].subText}
+          {hero[0].sub_text}
         </h2>
       </motion.div>
 
