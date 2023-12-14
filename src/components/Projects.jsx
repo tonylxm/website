@@ -16,7 +16,7 @@ const Projects = () => {
 
   return (
     <div className="w-full h-screen flex justify-center">
-      <div className="flex-[0.8]">
+      <div className="flex-[0.85]">
         <Animation>
           <div className={`${styles.card} bg-secondary z-20 mt-16 pb-28`}>
             <h3 className={`${styles.sectionHeadText} ml-3`}>Projects</h3>

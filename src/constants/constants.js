@@ -1,4 +1,4 @@
-import { code, sesa, foodie, coffee, hooper, leader, uoa, p1ac, bg } from "../assets/about-bgs";
+import { code, sesa, foodie, coffee, hooper, leader, uoa, p1ac, bg } from "../assets";
 import { xv, potioncraft } from "../assets/projects";
 
 export const hero = [
