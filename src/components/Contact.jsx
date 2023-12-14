@@ -56,9 +56,9 @@ const Contact = () => {
 
   return (
     <div className={`${styles.screen} xl:flex-row pt-20`}>
-      <div className="flex-[0.75] md:flex-[0.65] lg:flex-[0.5]">
+      <div className="flex-[0.8] lg:flex-[0.5]">
         <Animation>
-          <div className={styles.card}>
+          <div className={`${styles.card} bg-secondary`}>
             <h3 className={styles.sectionHeadText}>Contact</h3>
             <form
               ref={formRef}
