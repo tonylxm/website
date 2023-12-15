@@ -39,7 +39,7 @@ const Hero = () => {
   const starsY = useTransform(scrollYProgress, [0, 1], ["0%", "90%"]);
 
   return (
-    <div className="w-full h-screen overflow-hidden relative grid content-center">
+    <div className={`w-full h-screen overflow-hidden relative grid content-center`}>
       <motion.div
         style={{ y: textY }}
         variants={{
@@ -50,7 +50,7 @@ const Hero = () => {
         initial="hidden"
         animate="fadeIn"
         transition={{ duration: 0.5, delay: 0.15 }}
-        className="relative z-10 mb-[6%]"
+        className="relative z-10 mb-[10%] lg:mb-[6%]"
       >
         <h1 className={`${styles.heroHeadText}`}>
           <span>{hero[0].head_text}</span>

@@ -46,11 +46,6 @@ const About = () => {
     config: { duration: calculateBackgroundTransitionSpeed() },
   });
 
-  const backgroundImageStyle = {
-    backgroundPosition: "top",
-    backgroundSize: "cover",
-  };
-
   return (
     <div className={`${styles.screen} z-0`}>
       <animated.div

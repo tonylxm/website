@@ -15,10 +15,10 @@ const Projects = () => {
   // Staggered animation
 
   return (
-    <div className="w-full h-screen flex justify-center">
+    <div className={`${styles.screen}`}>
       <div className="flex-[0.85]">
         <Animation>
-          <div className={`${styles.card} bg-secondary z-20 mt-16 pb-14 lg:pb-24`}>
+          <div className={`${styles.card} bg-secondary z-20 pb-28 lg:pb-44`}>
             <h3 className={`${styles.sectionHeadText} ml-3`}>Projects</h3>
             <div className="grid grid-cols-1 lg:grid-cols-2">
               <motion.a
