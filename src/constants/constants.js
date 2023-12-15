@@ -51,7 +51,7 @@ export const about = [
   {
     paragraphs: [
       {
-        text: "I am passionate about building solutions that make a positive difference in people's lives. Currently, I achieve this as software development intern at ",
+        text: "I am passionate about solving problems that make a positive difference in people's lives. Currently, I achieve this as software development intern at ",
         link: {
           url: "https://www.emergencyq.com/",
           text: "Emergency Q",
