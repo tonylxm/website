@@ -14,7 +14,7 @@ const Footer = () => {
       <div className="mx-auto w-full max-w-screen-xl p-4 py-8 text-tertiary">
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-md sm:text-center flex">
-            <a href="#" className="hover:underline hover:text-white">
+            <a href="#" className="hover:underline hover:text-white flex-none">
               Tony Lim {currentYear}
             </a>
             &nbsp;&nbsp;|&nbsp;&nbsp; Made with &nbsp;
