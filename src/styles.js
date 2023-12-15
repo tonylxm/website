@@ -1,17 +1,26 @@
 const styles = {
-  paddingX: "sm:px-16",
-  paddingY: "sm:py-16 py-6",
-  padding: "sm:px-16 px-6 sm:py-16 py-10",
+  screen: `w-full h-[1000px] flex justify-center items-center`,
+  card: "p-4 rounded-2xl shadow-card",
+  button: "btn bg-primary py-3 px-8 text-[15px] sm:text-[16px] md:text-[17px] lg:text-lg outline-none border-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl hover:bg-indigo-950",
+  svg: "h-6",
 
-  heroHeadText: "font-black text-white lg:text-[120px] sm:text-[100px] xs:text-[80px] text-[60px] lg:leading-[95px] text-center",
-  heroSubText: "text-[#dfd9ff] font-medium lg:text-[30px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px] lg:mt-12 text-center",
+  heroHeadText: "text-[#ffede2] font-black text-white text-[70px] sm:text-[80px] md:text-[90px] lg:text-[120px] lg:leading-[95px] text-center",
+  heroSubText: "text-[#d2dcff] mx-20 font-medium text-[16px] sm:text-[18px] md:text-[20px] lg:text-[30px] lg:leading-[40px] lg:mt-12 text-center",
 
-  sectionHeadText: "text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]",
-  sectionText: "text-md lg:text-lg",
+  aboutBackground: "w-full h-[1000px] absolute brightness-[0.4]",
+  backgroundImageStyle: { backgroundPosition: "top", backgroundSize: "cover"},
 
-  formSubText: "text-white font-medium mb-2 text-md lg:text-lg",
-  formText: "bg-primary py-3 px-3 text-md lg:text-lg placeholder:text-tertiary text-white rounded-lg outline-none border-none font-medium focus:bg-indigo-950",
-  button: "btn bg-primary py-3 px-8 text-md lg:text-lg outline-none border-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl hover:bg-indigo-950",
+  projectDiv: "relative mx-4 md:mx-24 lg:mx-10 mt-10 hover:brightness-[1.4]",
+  projectCard: "h-60 lg:h-80 w-full rounded-2xl shadow-card brightness-[0.3] object-cover",
+  projectTitle: "text-white font-bold absolute top-5 px-5 text-xl lg:text-[25px]",
+  projectText: "text-white absolute top-14 px-5",
+  projectTechStack: "text-tertiary absolute bottom-5 px-5 flex items-center",
+
+  sectionHeadText: "text-white font-black text-[30px] sm:text-[50px] md:text-[60px]",
+  sectionText: "text-[15px] sm:text-[16px] md:text-[17px] lg:text-lg",
+
+  formSubText: "text-white font-medium mb-2 text-[15px] sm:text-[16px] md:text-[17px] lg:text-lg",
+  formText: "bg-primary py-3 px-3 text-[15px] sm:text-[16px] md:text-[17px] lg:text-lg placeholder:text-tertiary text-white rounded-lg outline-none border-none font-medium focus:bg-indigo-950",
 };
 
 export { styles };

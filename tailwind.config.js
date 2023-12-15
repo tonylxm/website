@@ -12,9 +12,6 @@ module.exports = {
       boxShadow: {
         card: "0px 35px 120px -15px #423c66",
       },
-      screens: {
-        xs: "450px",
-      },
     },
   },
   plugins: [require("daisyui")],

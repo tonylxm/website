@@ -46,7 +46,7 @@ const StarrySky = () => {
   };
 
   useEffect(() => {
-    if (isTouchDevice()) return;
+    if (isTouchDevice()) return;  // TODO: fix error on mobile
     
     window.addEventListener("resize", handleResize);
     return () => {

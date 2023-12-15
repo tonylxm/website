@@ -36,10 +36,10 @@ const Hero = () => {
 
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", getTextYValue()]);
-  const starsY = useTransform(scrollYProgress, [0, 1], ["0%", "75%"]);
+  const starsY = useTransform(scrollYProgress, [0, 1], ["0%", "90%"]);
 
   return (
-    <div className="w-full h-screen overflow-hidden relative grid content-center">
+    <div className={`w-full h-screen overflow-hidden relative grid content-center`}>
       <motion.div
         style={{ y: textY }}
         variants={{
@@ -50,13 +50,13 @@ const Hero = () => {
         initial="hidden"
         animate="fadeIn"
         transition={{ duration: 0.5, delay: 0.15 }}
-        className="relative z-10"
+        className="relative z-10 mb-[10%] lg:mb-[6%]"
       >
         <h1 className={`${styles.heroHeadText}`}>
-          <span className="text-[#ffede2]">{hero[0].headText}</span>
+          <span>{hero[0].head_text}</span>
         </h1>
-        <h2 className={`${styles.heroSubText} text-[#d2dcff] mx-20`}>
-          {hero[0].subText}
+        <h2 className={`${styles.heroSubText}`}>
+          {hero[0].sub_text}
         </h2>
       </motion.div>
 
