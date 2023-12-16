@@ -1,10 +1,9 @@
 import { useEffect, useRef } from "react";
 import Matter from "matter-js";
-import { styles } from "../styles";
+import { css3, react } from "../assets";
 
 function Stack() {
   const scene = useRef();
-  const isPressed = useRef(false);
   const engine = useRef(Matter.Engine.create());
 
   useEffect(() => {
@@ -26,7 +25,7 @@ function Stack() {
     const mouseConstraint = Matter.MouseConstraint.create(engine.current, {
       mouse: mouse,
       constraint: {
-        // stiffness: 0.1,
+        stiffness: 0.1,
         render: { visible: false },
       },
     });
@@ -47,26 +46,43 @@ function Stack() {
       isStatic: true,
     });
 
-    const logoSize = cw * 0.1; // 10% of container width
-    const javaScriptLogo = Matter.Bodies.rectangle(
-      cw / 2,
-      ch / 2,
-      logoSize,
-      logoSize
-    );
+    const logoSize = 80;
     const reactLogo = Matter.Bodies.rectangle(
       cw / 2,
       ch / 2,
       logoSize,
-      logoSize
+      logoSize,
+      {
+        render: {
+          sprite: {
+            texture: react,
+          },
+        },
+      }
     );
+
+    const css3Logo = Matter.Bodies.rectangle(
+      cw / 2,
+      ch / 2,
+      logoSize,
+      logoSize,
+      {
+        render: {
+          sprite: {
+            texture: css3,
+          },
+        },
+      }
+    );
+
+    // const tailwindLogo = Matter.Bodies.
 
     Matter.World.add(engine.current.world, [
       ground,
       ceiling,
       rightWall,
       leftWall,
-      javaScriptLogo,
+      css3Logo,
       reactLogo,
     ]);
 
@@ -84,7 +100,7 @@ function Stack() {
     };
   }, []);
 
-  return <div className={`h-[550px]`} ref={scene} />;
+  return <div className={`h-[560px]`} ref={scene} />;
 }
 
 export default Stack;
