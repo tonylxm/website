@@ -84,23 +84,7 @@ function Stack() {
     };
   }, []);
 
-  const handleDown = () => {
-    isPressed.current = true;
-  };
-
-  const handleUp = () => {
-    isPressed.current = false;
-  };
-
-  return (
-    <div
-    //   onMouseDown={handleDown}
-    //   onMouseUp={handleUp}
-    //   onMouseMove={handleAddCircle}
-    >
-      <div className={`${styles.card} h-[650px]`} ref={scene} />
-    </div>
-  );
+  return <div className={`h-[550px]`} ref={scene} />;
 }
 
 export default Stack;
