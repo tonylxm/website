@@ -1,19 +1,27 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Animation from "../utils/Animation";
 import Stack from "../utils/Stack";
 import { styles } from "../styles";
 import { ResetSvg } from "../assets/svg";
+import { motion, useInView } from "framer-motion";
 
 const TechStack = () => {
   const [resetCounter, setResetCounter] = useState(0);
+  const ref = useRef(null);
+  const isInView = useInView(ref);
 
   const handleReset = () => {
     setResetCounter((prevCounter) => prevCounter + 1);
   };
 
   return (
-    <div className={`${styles.screen}`}>
-      <div className="flex-[0.85] lg:flex-[0.5]">
+    <motion.div
+      className={`${styles.screen}`}
+      ref={ref}
+      initial={{ opacity: 0, y: 20 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+    >
+      <div className="flex-[0.85]">
         <Animation>
           <div className={`${styles.card} h-[650px]`}>
             <div className="flex items-center justify-between">
@@ -26,11 +34,11 @@ const TechStack = () => {
                 <ResetSvg />
               </button>
             </div>
-            <Stack resetCounter={resetCounter} />
+            {isInView && <Stack resetCounter={resetCounter} />}
           </div>
         </Animation>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

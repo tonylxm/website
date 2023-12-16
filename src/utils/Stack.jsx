@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Matter from "matter-js";
 import {
   html5,
@@ -15,46 +15,91 @@ import {
 const Stack = ({ resetCounter }) => {
   const scene = useRef();
   const engine = useRef(Matter.Engine.create());
+  const [dimensions, setDimensions] = useState({
+    cw: window.innerWidth / 1.225,
+    ch: window.innerHeight / 1.3,
+  });
 
-  useEffect(() => {
-    const cw = scene.current.clientWidth;
-    const ch = scene.current.clientHeight;
+  const logoSize = 80;
+  const gridSizeX = 5;
+  const gridSizeY = 5;
 
-    const resetTechStack = () => {
-      Matter.Composite.allBodies(engine.current.world).forEach((body) => {
-        Matter.Composite.remove(engine.current.world, body);
-      });
+  let techIndex = 0;
 
-      const stack = Matter.Composites.pyramid(
-        cw / 4,
-        ch / 2,
-        gridSizeX,
-        gridSizeY,
-        0,
-        0,
-        function (x, y) {
-          const tech = techStack[techIndex];
-          setTechIndex((prevIndex) => (prevIndex + 1) % techStack.length);
+  // Order by proficiency as this is the order they appear in the stack
+  const techStack = [
+    java,
+    javascript,
+    python,
+    typescript,
+    react,
+    angular,
+    html5,
+    css3,
+    tailwind,
+  ];
 
-          return Matter.Bodies.rectangle(x, y - 500, logoSize, logoSize, {
-            render: {
-              sprite: {
-                texture: tech,
-              },
-            },
-          });
-        }
-      );
-      
-      Matter.World.add(engine.current.world, stack);
+  const ground = Matter.Bodies.rectangle(dimensions.cw / 2, dimensions.ch + 220, dimensions.cw, 500, {
+    isStatic: true,
+  });
+  const ceiling = Matter.Bodies.rectangle(dimensions.cw / 2, -250, dimensions.cw, 500, {
+    isStatic: true,
+  });
+  const rightWall = Matter.Bodies.rectangle(dimensions.cw + 250, dimensions.ch / 2, 500, dimensions.ch, {
+    isStatic: true,
+  });
+  const leftWall = Matter.Bodies.rectangle(-250, dimensions.ch / 2, 500, dimensions.ch, {
+    isStatic: true,
+  });
+
+  const handleResize = () => {
+    const newDimensions = {
+      cw: window.innerWidth / 1.225,
+      ch: window.innerHeight / 1.3,
     };
 
+    setDimensions(newDimensions);
+
+    // Update ground
+    Matter.Body.setPosition(ground, { x: newDimensions.cw / 2, y: newDimensions.ch + 220 });
+
+    // Update ceiling
+    Matter.Body.setPosition(ceiling, { x: newDimensions.cw / 2, y: -250 });
+
+    // Update right wall
+    Matter.Body.setPosition(rightWall, { x: newDimensions.cw + 250, y: newDimensions.ch / 2 });
+
+    // Update left wall
+    Matter.Body.setPosition(leftWall, { x: -250, y: newDimensions.ch / 2 });
+
+    // Update stack
+    // Matter.Composite.allBodies(engine.current.world).forEach((body, index) => {
+    //   if (index >= 4) {
+    //     const stackX = newDimensions.cw / 4;
+    //     const stackY = newDimensions.ch / 2;
+    //     const tech = techStack[index - 4];
+    //     Matter.Body.setPosition(body, { x: stackX, y: stackY - 500 });
+    //     Matter.Body.setVertices(body, Matter.Vertices.fromPath(`0 0 ${logoSize} 0 ${logoSize} ${logoSize} 0 ${logoSize}`));
+    //     Matter.Body.setTexture(body, tech);
+    //   }
+    // });
+
+    Matter.Render.setPixelRatio(render, window.devicePixelRatio);
+    Matter.Render.canvasSize(render, newDimensions.cw, newDimensions.ch);
+
+    // Matter.Render.lookAt(render, {
+    //   min: { x: 0, y: 0 },
+    //   max: { x: newDimensions.cw, y: newDimensions.ch },
+    // });
+  };
+
+  useEffect(() => {
     const render = Matter.Render.create({
       element: scene.current,
       engine: engine.current,
       options: {
-        width: cw,
-        height: ch - 30,
+        width: dimensions.cw,
+        height: dimensions.ch - 30,
         wireframes: false,
         background: "transparent",
       },
@@ -71,41 +116,9 @@ const Stack = ({ resetCounter }) => {
 
     Matter.World.add(engine.current.world, mouseConstraint);
 
-    const ground = Matter.Bodies.rectangle(cw / 2, ch + 220, cw, 500, {
-      isStatic: true,
-    });
-    const ceiling = Matter.Bodies.rectangle(cw / 2, -250, cw, 500, {
-      isStatic: true,
-    });
-    const rightWall = Matter.Bodies.rectangle(cw + 250, ch / 2, 500, ch, {
-      isStatic: true,
-    });
-    const leftWall = Matter.Bodies.rectangle(-250, ch / 2, 500, ch, {
-      isStatic: true,
-    });
-
-    // Order by proficiency as this is the order they appear in the stack
-    const techStack = [
-      java,
-      javascript,
-      python,
-      typescript,
-      react,
-      angular,
-      html5,
-      css3,
-      tailwind,
-    ];
-
-    const logoSize = 80;
-    const gridSizeX = 5;
-    const gridSizeY = 5;
-
-    let techIndex = 0;
-
     const stack = Matter.Composites.pyramid(
-      cw / 4,
-      ch / 2,
+      dimensions.cw / 3,
+      dimensions.ch / 2,
       gridSizeX,
       gridSizeY,
       0,
@@ -114,7 +127,7 @@ const Stack = ({ resetCounter }) => {
         const tech = techStack[techIndex];
         techIndex = (techIndex + 1) % techStack.length;
 
-        return Matter.Bodies.rectangle(x, y - 500, logoSize, logoSize, {
+        return Matter.Bodies.rectangle(x, y - 250, logoSize, logoSize, {
           render: {
             sprite: {
               texture: tech,
@@ -135,8 +148,6 @@ const Stack = ({ resetCounter }) => {
     Matter.Runner.run(engine.current);
     Matter.Render.run(render);
 
-    document.addEventListener("resetTechStack", resetTechStack);
-
     return () => {
       Matter.Render.stop(render);
       Matter.World.clear(engine.current.world);
@@ -145,9 +156,15 @@ const Stack = ({ resetCounter }) => {
       render.canvas = null;
       render.context = null;
       render.textures = {};
-      document.removeEventListener("resetTechStack", resetTechStack);
     };
   }, [resetCounter]);
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return <div className={`h-[560px]`} ref={scene} />;
 };
