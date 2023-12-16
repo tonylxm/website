@@ -1,14 +1,53 @@
 import { useEffect, useRef } from "react";
 import Matter from "matter-js";
-import { css3, react } from "../assets";
+import {
+  html5,
+  css3,
+  javascript,
+  typescript,
+  react,
+  angular,
+  tailwind,
+  java,
+  python,
+} from "../assets";
 
-function Stack() {
+const Stack = ({ resetCounter }) => {
   const scene = useRef();
   const engine = useRef(Matter.Engine.create());
 
   useEffect(() => {
     const cw = scene.current.clientWidth;
     const ch = scene.current.clientHeight;
+
+    const resetTechStack = () => {
+      Matter.Composite.allBodies(engine.current.world).forEach((body) => {
+        Matter.Composite.remove(engine.current.world, body);
+      });
+
+      const stack = Matter.Composites.pyramid(
+        cw / 4,
+        ch / 2,
+        gridSizeX,
+        gridSizeY,
+        0,
+        0,
+        function (x, y) {
+          const tech = techStack[techIndex];
+          setTechIndex((prevIndex) => (prevIndex + 1) % techStack.length);
+
+          return Matter.Bodies.rectangle(x, y - 500, logoSize, logoSize, {
+            render: {
+              sprite: {
+                texture: tech,
+              },
+            },
+          });
+        }
+      );
+      
+      Matter.World.add(engine.current.world, stack);
+    };
 
     const render = Matter.Render.create({
       element: scene.current,
@@ -32,7 +71,6 @@ function Stack() {
 
     Matter.World.add(engine.current.world, mouseConstraint);
 
-    // Adjusted dimensions and positions relative to container size
     const ground = Matter.Bodies.rectangle(cw / 2, ch + 220, cw, 500, {
       isStatic: true,
     });
@@ -46,48 +84,58 @@ function Stack() {
       isStatic: true,
     });
 
+    // Order by proficiency as this is the order they appear in the stack
+    const techStack = [
+      java,
+      javascript,
+      python,
+      typescript,
+      react,
+      angular,
+      html5,
+      css3,
+      tailwind,
+    ];
+
     const logoSize = 80;
-    const reactLogo = Matter.Bodies.rectangle(
-      cw / 2,
+    const gridSizeX = 5;
+    const gridSizeY = 5;
+
+    let techIndex = 0;
+
+    const stack = Matter.Composites.pyramid(
+      cw / 4,
       ch / 2,
-      logoSize,
-      logoSize,
-      {
-        render: {
-          sprite: {
-            texture: react,
+      gridSizeX,
+      gridSizeY,
+      0,
+      0,
+      function (x, y) {
+        const tech = techStack[techIndex];
+        techIndex = (techIndex + 1) % techStack.length;
+
+        return Matter.Bodies.rectangle(x, y - 500, logoSize, logoSize, {
+          render: {
+            sprite: {
+              texture: tech,
+            },
           },
-        },
+        });
       }
     );
-
-    const css3Logo = Matter.Bodies.rectangle(
-      cw / 2,
-      ch / 2,
-      logoSize,
-      logoSize,
-      {
-        render: {
-          sprite: {
-            texture: css3,
-          },
-        },
-      }
-    );
-
-    // const tailwindLogo = Matter.Bodies.
 
     Matter.World.add(engine.current.world, [
       ground,
       ceiling,
       rightWall,
       leftWall,
-      css3Logo,
-      reactLogo,
+      stack,
     ]);
 
     Matter.Runner.run(engine.current);
     Matter.Render.run(render);
+
+    document.addEventListener("resetTechStack", resetTechStack);
 
     return () => {
       Matter.Render.stop(render);
@@ -97,10 +145,11 @@ function Stack() {
       render.canvas = null;
       render.context = null;
       render.textures = {};
+      document.removeEventListener("resetTechStack", resetTechStack);
     };
-  }, []);
+  }, [resetCounter]);
 
   return <div className={`h-[560px]`} ref={scene} />;
-}
+};
 
 export default Stack;
