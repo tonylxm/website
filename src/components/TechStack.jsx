@@ -4,6 +4,7 @@ import Stack from "../utils/Stack";
 import { styles } from "../styles";
 import { ResetSvg } from "../assets/svg";
 import { motion, useInView } from "framer-motion";
+import { isTouchDevice } from "../utils/CustomCursor";
 
 const TechStack = () => {
   const [shouldRenderStack, setShouldRenderStack] = useState(true);
@@ -25,6 +26,7 @@ const TechStack = () => {
   };
 
   useEffect(() => {
+    if (isTouchDevice()) return;
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);

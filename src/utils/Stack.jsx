@@ -64,7 +64,7 @@ const Stack = () => {
     }
   );
   const rightWall = Matter.Bodies.rectangle(
-    cw + thickness * 0.9998 / 2,
+    cw + thickness / 2,
     ch / 2,
     thickness,
     ch,
