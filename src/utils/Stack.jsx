@@ -16,7 +16,7 @@ const Stack = () => {
   const scene = useRef();
   const engine = useRef(Matter.Engine.create());
 
-  const cw = window.innerWidth * 0.75;
+  const cw = window.innerWidth * 0.7;
   const ch = 530;
 
   const logoSize = 80;
@@ -46,6 +46,9 @@ const Stack = () => {
     thickness,
     {
       isStatic: true,
+      render: {
+        fillStyle: "secondary",
+      },
     }
   );
   const ceiling = Matter.Bodies.rectangle(
@@ -55,15 +58,21 @@ const Stack = () => {
     thickness,
     {
       isStatic: true,
+      render: {
+        fillStyle: "secondary",
+      },
     }
   );
   const rightWall = Matter.Bodies.rectangle(
-    cw + thickness / 2,
+    cw + thickness * 0.9998 / 2,
     ch / 2,
     thickness,
     ch,
     {
       isStatic: true,
+      render: {
+        fillStyle: "secondary",
+      },
     }
   );
   const leftWall = Matter.Bodies.rectangle(
@@ -73,6 +82,9 @@ const Stack = () => {
     ch,
     {
       isStatic: true,
+      render: {
+        fillStyle: "secondary",
+      },
     }
   );
 
