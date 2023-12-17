@@ -39,7 +39,9 @@ const Hero = () => {
   const starsY = useTransform(scrollYProgress, [0, 1], ["0%", "90%"]);
 
   return (
-    <div className={`w-full h-screen overflow-hidden relative grid content-center`}>
+    <div
+      className={`w-full h-screen overflow-hidden relative grid content-center`}
+    >
       <motion.div
         style={{ y: textY }}
         variants={{
@@ -50,18 +52,16 @@ const Hero = () => {
         initial="hidden"
         animate="fadeIn"
         transition={{ duration: 0.5, delay: 0.15 }}
-        className="relative z-10 mb-[10%] lg:mb-[6%]"
+        className="relative z-20 mb-[10%] lg:mb-[6%]"
       >
         <h1 className={`${styles.heroHeadText}`}>
           <span>{hero[0].head_text}</span>
         </h1>
-        <h2 className={`${styles.heroSubText}`}>
-          {hero[0].sub_text}
-        </h2>
+        <h2 className={`${styles.heroSubText}`}>{hero[0].sub_text}</h2>
       </motion.div>
 
       <div
-        className="absolute inset-0 z-0 brightness-75"
+        className="absolute inset-0 z-10 brightness-75"
         style={{
           backgroundImage: `url(${rangitotoBottom})`,
           backgroundPosition: "bottom",
@@ -80,19 +80,29 @@ const Hero = () => {
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
         transition={{ duration: 0.5, delay: 0.5 }}
-        className="absolute inset-0 z-20"
+        className="absolute inset-0 z-30"
       >
         <StarrySky />
       </motion.div>
 
       <div
-        className="absolute inset-0 z-30 brightness-75"
+        className="absolute inset-0 z-40 brightness-75"
         style={{
           backgroundImage: `url(${rangitotoTop})`,
           backgroundPosition: "bottom",
           backgroundSize: "cover",
         }}
       />
+      <div className="absolute inset-0 h-6 w-6 z-0">
+        <a href="https://www.hitwebcounter.com" target="_blank">
+          <img
+            src="https://hitwebcounter.com/counter/counter.php?page=10342462&style=0025&nbdigits=4&type=ip&initCount=0"
+            title="Counter Widget"
+            Alt="Visit counter For Websites"
+            border="0"
+          />
+        </a>
+      </div>
     </div>
   );
 };
