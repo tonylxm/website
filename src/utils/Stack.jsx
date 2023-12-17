@@ -12,7 +12,7 @@ import {
   python,
 } from "../assets";
 
-const Stack = ({ resetCounter }) => {
+const Stack = () => {
   const scene = useRef();
   const engine = useRef(Matter.Engine.create());
   const [dimensions, setDimensions] = useState({
@@ -53,45 +53,34 @@ const Stack = ({ resetCounter }) => {
   });
 
   const handleResize = () => {
-    const newDimensions = {
-      cw: window.innerWidth / 1.225,
-      ch: window.innerHeight / 1.3,
-    };
-
-    setDimensions(newDimensions);
-
-    // Update ground
-    Matter.Body.setPosition(ground, { x: newDimensions.cw / 2, y: newDimensions.ch + 220 });
-
-    // Update ceiling
-    Matter.Body.setPosition(ceiling, { x: newDimensions.cw / 2, y: -250 });
-
-    // Update right wall
-    Matter.Body.setPosition(rightWall, { x: newDimensions.cw + 250, y: newDimensions.ch / 2 });
-
-    // Update left wall
-    Matter.Body.setPosition(leftWall, { x: -250, y: newDimensions.ch / 2 });
-
-    // Update stack
+    // const newDimensions = {
+    //   cw: window.innerWidth / 1.225,
+    //   ch: window.innerHeight / 1.3,
+    // };
+  
+    // setDimensions(newDimensions);
+  
+    // // Update stack
     // Matter.Composite.allBodies(engine.current.world).forEach((body, index) => {
     //   if (index >= 4) {
-    //     const stackX = newDimensions.cw / 4;
+    //     const stackX = newDimensions.cw / 3;
     //     const stackY = newDimensions.ch / 2;
     //     const tech = techStack[index - 4];
-    //     Matter.Body.setPosition(body, { x: stackX, y: stackY - 500 });
+    //     Matter.Body.setPosition(body, { x: stackX, y: stackY - 250 });
     //     Matter.Body.setVertices(body, Matter.Vertices.fromPath(`0 0 ${logoSize} 0 ${logoSize} ${logoSize} 0 ${logoSize}`));
     //     Matter.Body.setTexture(body, tech);
     //   }
     // });
-
-    Matter.Render.setPixelRatio(render, window.devicePixelRatio);
-    Matter.Render.canvasSize(render, newDimensions.cw, newDimensions.ch);
-
+  
+    // Matter.Render.setPixelRatio(render, window.devicePixelRatio);
+    // Matter.Render.canvasSize(render, newDimensions.cw, newDimensions.ch);
+  
     // Matter.Render.lookAt(render, {
     //   min: { x: 0, y: 0 },
     //   max: { x: newDimensions.cw, y: newDimensions.ch },
     // });
-  };
+  };  
+  
 
   useEffect(() => {
     const render = Matter.Render.create({
@@ -133,7 +122,10 @@ const Stack = ({ resetCounter }) => {
               texture: tech,
             },
           },
-        });
+          friction: 1,
+          frictionAir: 0.001,
+          restitution: 0.1,
+        })
       }
     );
 
@@ -157,7 +149,7 @@ const Stack = ({ resetCounter }) => {
       render.context = null;
       render.textures = {};
     };
-  }, [resetCounter]);
+  }, []);
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);

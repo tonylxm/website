@@ -6,17 +6,20 @@ import { ResetSvg } from "../assets/svg";
 import { motion, useInView } from "framer-motion";
 
 const TechStack = () => {
-  const [resetCounter, setResetCounter] = useState(0);
+  const [shouldRenderStack, setShouldRenderStack] = useState(true);
   const ref = useRef(null);
   const isInView = useInView(ref);
 
   const handleReset = () => {
-    setResetCounter((prevCounter) => prevCounter + 1);
+    setShouldRenderStack(false);
+    setTimeout(() => {
+      setShouldRenderStack(true);
+    }, 1);
   };
 
   return (
     <motion.div
-      className={`${styles.screen}`}
+      className={`w-full h-[650px] flex justify-center items-center xl:flex-row mt-32 lg:mt-44`}
       ref={ref}
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -34,7 +37,7 @@ const TechStack = () => {
                 <ResetSvg />
               </button>
             </div>
-            {isInView && <Stack resetCounter={resetCounter} />}
+            {isInView && shouldRenderStack && <Stack />}
           </div>
         </Animation>
       </div>
