@@ -102,6 +102,14 @@ const Hero = () => {
             border="0"
           />
         </a>
+        <a href="https://www.hitwebcounter.com" target="_blank">
+          <img
+            src="https://hitwebcounter.com/counter/counter.php?page=10342645&style=0025&nbdigits=9&type=page&initCount=0"
+            title="Counter Widget"
+            Alt="Visit counter For Websites"
+            border="0"
+          />
+        </a>
       </div>
     </div>
   );
