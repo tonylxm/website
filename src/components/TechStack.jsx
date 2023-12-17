@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Animation from "../utils/Animation";
 import Stack from "../utils/Stack";
 import { styles } from "../styles";
@@ -16,6 +16,20 @@ const TechStack = () => {
       setShouldRenderStack(true);
     }, 1);
   };
+
+  const handleResize = () => {
+    setShouldRenderStack(false);
+    setTimeout(() => {
+      setShouldRenderStack(true);
+    }, 1);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <motion.div
@@ -37,7 +51,9 @@ const TechStack = () => {
                 <ResetSvg />
               </button>
             </div>
-            {isInView && shouldRenderStack && <Stack />}
+            <div className="flex flex-col items-center">
+              {isInView && shouldRenderStack && <Stack />}
+            </div>
           </div>
         </Animation>
       </div>

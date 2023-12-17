@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import Matter from "matter-js";
 import {
   html5,
@@ -15,10 +15,9 @@ import {
 const Stack = () => {
   const scene = useRef();
   const engine = useRef(Matter.Engine.create());
-  const [dimensions, setDimensions] = useState({
-    cw: window.innerWidth / 1.225,
-    ch: window.innerHeight / 1.3,
-  });
+
+  const cw = window.innerWidth * 0.75;
+  const ch = 530;
 
   const logoSize = 80;
   const gridSizeX = 5;
@@ -39,56 +38,51 @@ const Stack = () => {
     tailwind,
   ];
 
-  const ground = Matter.Bodies.rectangle(dimensions.cw / 2, dimensions.ch + 220, dimensions.cw, 500, {
-    isStatic: true,
-  });
-  const ceiling = Matter.Bodies.rectangle(dimensions.cw / 2, -250, dimensions.cw, 500, {
-    isStatic: true,
-  });
-  const rightWall = Matter.Bodies.rectangle(dimensions.cw + 250, dimensions.ch / 2, 500, dimensions.ch, {
-    isStatic: true,
-  });
-  const leftWall = Matter.Bodies.rectangle(-250, dimensions.ch / 2, 500, dimensions.ch, {
-    isStatic: true,
-  });
-
-  const handleResize = () => {
-    // const newDimensions = {
-    //   cw: window.innerWidth / 1.225,
-    //   ch: window.innerHeight / 1.3,
-    // };
-  
-    // setDimensions(newDimensions);
-  
-    // // Update stack
-    // Matter.Composite.allBodies(engine.current.world).forEach((body, index) => {
-    //   if (index >= 4) {
-    //     const stackX = newDimensions.cw / 3;
-    //     const stackY = newDimensions.ch / 2;
-    //     const tech = techStack[index - 4];
-    //     Matter.Body.setPosition(body, { x: stackX, y: stackY - 250 });
-    //     Matter.Body.setVertices(body, Matter.Vertices.fromPath(`0 0 ${logoSize} 0 ${logoSize} ${logoSize} 0 ${logoSize}`));
-    //     Matter.Body.setTexture(body, tech);
-    //   }
-    // });
-  
-    // Matter.Render.setPixelRatio(render, window.devicePixelRatio);
-    // Matter.Render.canvasSize(render, newDimensions.cw, newDimensions.ch);
-  
-    // Matter.Render.lookAt(render, {
-    //   min: { x: 0, y: 0 },
-    //   max: { x: newDimensions.cw, y: newDimensions.ch },
-    // });
-  };  
-  
+  const thickness = 500;
+  const ground = Matter.Bodies.rectangle(
+    cw / 2,
+    ch + thickness / 2,
+    cw,
+    thickness,
+    {
+      isStatic: true,
+    }
+  );
+  const ceiling = Matter.Bodies.rectangle(
+    cw / 2,
+    0 - thickness / 2,
+    cw,
+    thickness,
+    {
+      isStatic: true,
+    }
+  );
+  const rightWall = Matter.Bodies.rectangle(
+    cw + thickness / 2,
+    ch / 2,
+    thickness,
+    ch,
+    {
+      isStatic: true,
+    }
+  );
+  const leftWall = Matter.Bodies.rectangle(
+    0 - thickness / 2,
+    ch / 2,
+    thickness,
+    ch,
+    {
+      isStatic: true,
+    }
+  );
 
   useEffect(() => {
     const render = Matter.Render.create({
       element: scene.current,
       engine: engine.current,
       options: {
-        width: dimensions.cw,
-        height: dimensions.ch - 30,
+        width: cw,
+        height: ch,
         wireframes: false,
         background: "transparent",
       },
@@ -105,9 +99,10 @@ const Stack = () => {
 
     Matter.World.add(engine.current.world, mouseConstraint);
 
+    const pyramidWidth = gridSizeX * logoSize;
     const stack = Matter.Composites.pyramid(
-      dimensions.cw / 3,
-      dimensions.ch / 2,
+      cw / 2 - pyramidWidth / 2,
+      ch / 2,
       gridSizeX,
       gridSizeY,
       0,
@@ -116,16 +111,23 @@ const Stack = () => {
         const tech = techStack[techIndex];
         techIndex = (techIndex + 1) % techStack.length;
 
-        return Matter.Bodies.rectangle(x, y - 250, logoSize, logoSize, {
-          render: {
-            sprite: {
-              texture: tech,
+        return Matter.Bodies.rectangle(
+          x,
+          y - thickness / 2,
+          logoSize,
+          logoSize,
+          {
+            render: {
+              sprite: {
+                texture: tech,
+              },
             },
-          },
-          friction: 1,
-          frictionAir: 0.001,
-          restitution: 0.1,
-        })
+            label: "tech",
+            friction: 1,
+            frictionAir: 0.001,
+            restitution: 0.1,
+          }
+        );
       }
     );
 
@@ -151,14 +153,7 @@ const Stack = () => {
     };
   }, []);
 
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  return <div className={`h-[560px]`} ref={scene} />;
+  return <div className={`h-[530px]`} ref={scene} />;
 };
 
 export default Stack;
