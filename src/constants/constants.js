@@ -22,20 +22,20 @@ export const titles = [
     img: foodie,
   },
   {
-    title: "Leader & Change Maker",
-    img: leader,
-  },
-  {
     title: "Penultimate Software Engineering Student",
     img: uoa,
   },
   {
-    title: "Engineering Tutor",
-    img: p1ac,
-  },
-  {
     title: "Hooper",
     img: hooper,
+  },
+  {
+    title: "Leader & Change Maker",
+    img: leader,
+  },
+  {
+    title: "Engineering Tutor",
+    img: p1ac,
   },
   {
     title: "Coffee Lover",
@@ -77,20 +77,6 @@ export const projects = [
     name: "XV",
     description:
       "X/Twitter clone. Developed in a team of 5 at the SESA x WDCC Hackathon 2023.",
-    stack: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "mongodb",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
-      },
-    ],
     img: xv,
     github_url: "https://github.com/tonylxm/sesa-x-wdcc-hackathon",
     deployed_url: "https://tonylxm.github.io/sesa-x-wdcc-hackathon",
@@ -99,20 +85,6 @@ export const projects = [
     name: "Potioncraft",
     description:
       "EsAIpe room game. Integration of OpenAI API personifies wizard GameMaster.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "restapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "scss",
-        color: "pink-text-gradient",
-      },
-    ],
     img: potioncraft,
     github_url: "https://github.com/tonylxm/escAIpe-room-game-potioncraft",
   },
