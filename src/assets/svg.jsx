@@ -1,4 +1,4 @@
-import { react, firebase, tailwind, java, css3} from "./index.js"
+import { react, firebase, tailwind, java, css3 } from "./index.js";
 
 export const LinkedInSvg = () => {
   return (
@@ -72,6 +72,21 @@ export const TailwindCSSSvg = () => {
   );
 };
 
+export const ResetSvg = () => {
+  return (
+    <svg
+      className="h-6"
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 400 400"
+    >
+      <title>Reset</title>
+      <path d="M185.593 55.429 C 154.748 58.801,124.304 72.372,102.694 92.382 L 99.952 94.920 86.824 81.859 C 78.339 73.417,73.004 68.441,71.739 67.788 C 65.934 64.793,56.937 68.832,55.221 75.203 C 54.915 76.339,54.805 91.637,54.883 122.032 L 55.000 167.174 55.941 168.913 C 57.058 170.975,59.619 173.499,61.739 174.626 C 63.541 175.584,151.798 176.138,155.232 175.213 C 161.581 173.504,165.638 164.464,162.644 158.696 C 161.989 157.434,156.753 151.836,147.902 142.936 L 134.175 129.133 135.674 127.567 C 146.584 116.178,169.423 105.910,188.866 103.654 C 264.694 94.853,320.666 173.828,287.194 242.391 C 256.503 305.260,171.876 316.205,126.601 263.161 C 122.770 258.673,121.817 257.796,120.488 257.533 C 116.498 256.743,116.203 256.969,101.164 272.370 C 84.288 289.653,84.628 288.846,91.096 296.244 C 132.804 343.951,201.604 358.677,259.737 332.340 C 343.764 294.271,371.553 189.627,317.543 114.657 C 287.922 73.541,235.433 49.980,185.593 55.429" />
+    </svg>
+  );
+};
+
 export const LinkSvg = () => {
   return (
     <svg
@@ -87,24 +102,12 @@ export const LinkSvg = () => {
 };
 
 export const ColourReactSvg = () => {
-  return (
-    <img
-      className="h-7"
-      aria-hidden="true"
-      src={react}
-      title="React"
-    />
-  );
+  return <img className="h-7" aria-hidden="true" src={react} title="React" />;
 };
 
 export const FirebaseSvg = () => {
   return (
-    <img
-      className="h-6"
-      aria-hidden="true"
-      src={firebase}
-      title="Firebase"
-    />
+    <img className="h-6" aria-hidden="true" src={firebase} title="Firebase" />
   );
 };
 
@@ -120,23 +123,9 @@ export const ColourTailwindCSSSvg = () => {
 };
 
 export const JavaSvg = () => {
-  return (
-    <img
-      className="h-6"
-      aria-hidden="true"
-      src={java}
-      title="Java"
-    />
-  );
+  return <img className="h-6" aria-hidden="true" src={java} title="Java" />;
 };
 
 export const CSS3Svg = () => {
-  return (
-    <img
-      className="h-6"
-      aria-hidden="true"
-      src={css3}
-      title="CSS3"
-    />
-  );
+  return <img className="h-6" aria-hidden="true" src={css3} title="CSS3" />;
 };

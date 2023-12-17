@@ -1,6 +1,6 @@
 const styles = {
   screen: `w-full h-[1000px] flex justify-center items-center`,
-  card: "p-4 rounded-2xl shadow-card",
+  card: "bg-secondary p-4 rounded-2xl shadow-card",
   button: "btn bg-primary py-3 px-8 text-[15px] sm:text-[16px] md:text-[17px] lg:text-lg outline-none border-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl hover:bg-indigo-950",
   svg: "h-6",
 

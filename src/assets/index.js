@@ -9,7 +9,13 @@ export { default as p1ac } from "./about-bgs/P1AC.jpg";
 export { default as bg } from "./about-bgs/bg.jpg";
 
 export { default as react } from "./tech/react.svg";
+export { default as angular } from "./tech/angular.svg";
 export { default as firebase } from "./tech/firebase.svg";
 export { default as tailwind } from "./tech/tailwind.svg";
 export { default as java } from "./tech/java.svg";
+export { default as python } from "./tech/python.svg";
+export { default as html5 } from "./tech/html5.svg";
 export { default as css3 } from "./tech/css3.svg";
+export { default as javascript } from "./tech/javascript.svg";
+export { default as typescript } from "./tech/typescript.svg";
+export { default as git } from "./tech/git.svg";
