@@ -8,12 +8,12 @@ import rangitotoBottom from "../assets/rangitoto-bottom.jpg";
 import StarrySky from "../utils/StarrySky";
 
 const Hero = () => {
-  const ref1 = useRef(null);
-  const isInView = useInView(ref1);
+  const textRef = useRef(null);
+  const textInView = useInView(textRef);
 
-  const ref2 = useRef(null);
+  const starsRef = useRef(null);
   const { scrollYProgress } = useScroll({
-    target: ref2,
+    target: starsRef,
     offset: ["start start", "end start"],
   });
 
@@ -48,7 +48,7 @@ const Hero = () => {
           hidden: { opacity: 0 },
           fadeIn: { opacity: 1 },
         }}
-        ref={ref1}
+        ref={textRef}
         initial="hidden"
         animate="fadeIn"
         transition={{ duration: 0.5, delay: 0.15 }}
@@ -76,9 +76,9 @@ const Hero = () => {
           hidden: { opacity: 0 },
           visible: { opacity: 1 },
         }}
-        ref={ref1}
+        ref={textRef}
         initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
+        animate={textInView ? "visible" : "hidden"}
         transition={{ duration: 0.5, delay: 0.5 }}
         className="absolute inset-0 z-30"
       >
@@ -98,7 +98,7 @@ const Hero = () => {
           <img
             src="https://hitwebcounter.com/counter/counter.php?page=10342462&style=0025&nbdigits=4&type=ip&initCount=0"
             title="Counter Widget"
-            Alt="Visit counter For Websites"
+            alt="Visit counter For Websites"
             border="0"
           />
         </a>
@@ -106,7 +106,7 @@ const Hero = () => {
           <img
             src="https://hitwebcounter.com/counter/counter.php?page=10342645&style=0025&nbdigits=9&type=page&initCount=0"
             title="Counter Widget"
-            Alt="Visit counter For Websites"
+            alt="Visit counter For Websites"
             border="0"
           />
         </a>
