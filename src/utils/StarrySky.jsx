@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useLayoutEffect, useState, useMemo } from "react";
 import anime from "animejs";
 import { isTouchDevice } from "./CustomCursor";
 
@@ -54,14 +54,14 @@ const StarrySky = () => {
     };
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     starryNight();
     shootingStars();
   }, []);
 
   const memoizedStarPositions = useMemo(
     () =>
-      Array.from({ length: numStars }, (_, index) => ({
+      Array.from({ length: numStars }, () => ({
         x: getRandomX(),
         y: getRandomY(),
       })),
@@ -70,7 +70,7 @@ const StarrySky = () => {
 
   const memoizedShootingStarPositions = useMemo(
     () =>
-      Array.from({ length: numShootingStars }, (_, index) => ({
+      Array.from({ length: numShootingStars }, () => ({
         x: getRandomX(),
         y: getRandomY(),
       })),
