@@ -57,7 +57,7 @@ export const about = [
           text: "Emergency Q",
         },
         additional_text:
-          ", an award-winning healthtech company that reduces wait times and overcrowding in hospitals, emergency departments and urgent care clinics.",
+          ", an award-winning healthtech company that reduces wait times and overcrowding in hospital emergency departments and urgent care clinics.",
       },
       {
         text: "For 2024, I am the President of ",
@@ -66,7 +66,7 @@ export const about = [
           text: "SESA",
         },
         additional_text:
-          " - the Software Engineering Students Association at the University of Auckland.",
+          " - the Software Engineering Students' Association at the University of Auckland.",
       },
     ],
   },
@@ -76,7 +76,7 @@ export const projects = [
   {
     name: "XV",
     description:
-      "X/Twitter clone. Developed in a team of 5 at the SESA x WDCC Hackathon 2023.",
+      "Medieval X/Twitter clone. Developed in a team of 5 at the SESA x WDCC Hackathon 2023.",
     img: xv,
     github_url: "https://github.com/tonylxm/sesa-x-wdcc-hackathon",
     deployed_url: "https://tonylxm.github.io/sesa-x-wdcc-hackathon",
