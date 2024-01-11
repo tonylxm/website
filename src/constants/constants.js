@@ -57,7 +57,7 @@ export const about = [
           text: "Emergency Q",
         },
         additional_text:
-          ", an award-winning healthtech company that reduces wait times and overcrowding in hospital emergency departments and urgent care clinics.",
+          ", an award-winning health tech company that reduces wait times and overcrowding in hospital emergency departments and urgent care clinics.",
       },
       {
         text: "For 2024, I am the President of ",
