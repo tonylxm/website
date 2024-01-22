@@ -35,7 +35,7 @@ const TechStack = () => {
 
   return (
     <motion.div
-      className={`w-full h-[650px] flex justify-center items-center xl:flex-row mt-32 lg:mt-44`}
+      className={`${styles.screen} h-[650px] mt-32 lg:mt-44`}
       ref={ref}
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}

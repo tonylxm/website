@@ -18,7 +18,7 @@ const Projects = () => {
     <div className={`${styles.screen}`}>
       <div className="flex-[0.85]">
         <Animation>
-          <div className={`${styles.card} z-20 pb-28 lg:pb-44`}>
+          <div className={`${styles.card} z-20 pb-24 lg:pb-36`}>
             <h3 className={`${styles.sectionHeadText}`}>Projects</h3>
             <div className="grid grid-cols-1 lg:grid-cols-2">
               <a href={projects[0].deployed_url} target="_blank">
