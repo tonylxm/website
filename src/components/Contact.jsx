@@ -55,7 +55,7 @@ const Contact = () => {
   }
 
   return (
-    <div className={`${styles.screen}`}>
+    <div className={`${styles.screen} h-[800px] mb-16 lg:mb-20`}>
       <div className="flex-[0.85] lg:flex-[0.5]">
         <Animation>
           <div className={`${styles.card} bg-secondary`}>
