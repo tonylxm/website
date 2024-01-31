@@ -12,7 +12,9 @@ import {
 const App = () => {
   return (
     <BrowserRouter>
-      <CustomCursor />
+      <div className="z-50">
+        <CustomCursor />
+      </div>
       <div className="relative z-0 bg-primary">
         <Hero />
         <About />
