@@ -20,10 +20,8 @@ const App = () => {
         <About />
         <TechStack />
         <Projects />
-        <div className="relative z-0">
-          <Contact />
-          <Footer />
-        </div>
+        <Contact />
+        <Footer />
       </div>
     </BrowserRouter>
   );
