@@ -57,7 +57,7 @@ export const about = [
           text: "Emergency Q",
         },
         additional_text:
-          ", an award-winning health tech company that reduces wait times and overcrowding in hospital emergency departments and urgent care clinics.",
+          ", an award-winning healthtech company that reduces wait times and overcrowding in hospital emergency departments.",
       },
       {
         text: "For 2024, I am the President of ",
@@ -66,7 +66,7 @@ export const about = [
           text: "SESA",
         },
         additional_text:
-          " - the Software Engineering Students' Association at the University of Auckland.",
+          " - the Software Engineering Students Association at the University of Auckland.",
       },
     ],
   },
