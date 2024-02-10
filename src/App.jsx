@@ -1,4 +1,3 @@
-import { BrowserRouter } from "react-router-dom";
 import CustomCursor from "./utils/CustomCursor";
 import {
   Hero,
@@ -11,7 +10,7 @@ import {
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <div>
       <div className="z-50">
         <CustomCursor />
       </div>
@@ -23,7 +22,7 @@ const App = () => {
         <Contact />
         <Footer />
       </div>
-    </BrowserRouter>
+    </div>
   );
 };
 
