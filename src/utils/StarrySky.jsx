@@ -4,7 +4,7 @@ import { isTouchDevice } from "./CustomCursor";
 
 const StarrySky = () => {
   const [numStars] = useState(75);
-  const [numShootingStars] = useState(75);
+  // const [numShootingStars] = useState(50);
   const [dimensions, setDimensions] = useState({
     vw: window.innerWidth,
     vh: window.innerHeight,
@@ -26,17 +26,19 @@ const StarrySky = () => {
     });
   };
 
-  const shootingStars = () => {
-    anime({
-      targets: ".wish",
-      easing: "linear",
-      loop: true,
-      delay: (el, i) => 1000 * i,
-      opacity: [{ duration: 700, value: "1" }],
-      width: [{ value: "150px" }, { value: "0px" }],
-      translateX: 350,
-    });
-  };
+  // const shootingStars = () => {
+  //   anime({
+  //     targets: ".wish",
+  //     easing: "linear",
+  //     loop: true,
+  //     delay: (el, i) => 1000 * i,
+  //     opacity: [{ duration: 700, value: "1" }],
+  //     width: [{ value: "150px" }, { value: "0px" }],
+  //     translateX: 350,
+  //     translateZ: 0,
+  //     translate3d: 0,
+  //   });
+  // };
 
   const handleResize = () => {
     setDimensions({
@@ -56,7 +58,7 @@ const StarrySky = () => {
 
   useLayoutEffect(() => {
     starryNight();
-    shootingStars();
+    // shootingStars();
   }, []);
 
   const memoizedStarPositions = useMemo(
@@ -68,14 +70,14 @@ const StarrySky = () => {
     [numStars, dimensions]
   );
 
-  const memoizedShootingStarPositions = useMemo(
-    () =>
-      Array.from({ length: numShootingStars }, () => ({
-        x: getRandomX(),
-        y: getRandomY(),
-      })),
-    [numShootingStars, dimensions]
-  );
+  // const memoizedShootingStarPositions = useMemo(
+  //   () =>
+  //     Array.from({ length: numShootingStars }, () => ({
+  //       x: getRandomX(),
+  //       y: getRandomY(),
+  //     })),
+  //   [numShootingStars, dimensions]
+  // );
 
   return (
     <div>
@@ -97,7 +99,7 @@ const StarrySky = () => {
           transform: "translateX(calc(50vw - 50%)) translateY(calc(50vh - 60%)) rotate(120deg)",
         }}
       >
-        {memoizedShootingStarPositions.map(({ x, y }, index) => (
+        {/* {memoizedShootingStarPositions.map(({ x, y }, index) => (
           <div
             key={index}
             className="wish absolute w-0 h-0.5"
@@ -108,7 +110,7 @@ const StarrySky = () => {
               filter: "drop-shadow(0 0 6px white)",
             }}
           />
-        ))}
+        ))} */}
       </div>
     </div>
   );
