@@ -15,9 +15,9 @@ const Footer = () => {
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-md sm:text-center flex">
             <a href="#" className="hover:underline hover:text-white flex-none">
-              Tony Lim {currentYear}
+              &copy; {currentYear} Tony Lim
             </a>
-            &nbsp;&nbsp;|&nbsp;&nbsp; Made with &nbsp;
+            &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp; Made with &nbsp;
             <ReactSvg />
             &nbsp; + &nbsp;
             <TailwindCSSSvg />

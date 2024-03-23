@@ -1,4 +1,14 @@
-import { code, sesa, foodie, coffee, hooper, leader, uoa, p1ac, bg } from "../assets";
+import {
+  code,
+  sesa,
+  foodie,
+  coffee,
+  hooper,
+  leader,
+  uoa,
+  p1ac,
+  bg,
+} from "../assets";
 import { xv, potioncraft } from "../assets/projects";
 
 export const hero = [
@@ -44,14 +54,14 @@ export const titles = [
   {
     title: "Tony Lim",
     img: bg,
-  }
+  },
 ];
 
 export const about = [
   {
     paragraphs: [
       {
-        text: "I am passionate about solving problems that make a positive difference in people's lives. Currently, I achieve this as software development intern at ",
+        text: "I am passionate about solving problems that make a positive difference in people's lives. Last summer, I achieved this as Software Development Intern at ",
         link: {
           url: "https://www.emergencyq.com/",
           text: "Emergency Q",
@@ -66,7 +76,7 @@ export const about = [
           text: "SESA",
         },
         additional_text:
-          " - the Software Engineering Students Association at the University of Auckland.",
+          " - the Software Engineering Students Association at the University of Auckland. I lead an executive team of 17 to run social and career-focused events for the 350+ software engineering students at UoA, connecting them with each other as well as industry professionals.",
       },
     ],
   },
