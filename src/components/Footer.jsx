@@ -30,7 +30,7 @@ const Footer = () => {
             <a
               href={resume}
               target="_blank"
-              className=" hover:text-white underline"
+              className=" hover:text-white hover:underline"
             >
               Resume
             </a>

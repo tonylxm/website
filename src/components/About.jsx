@@ -92,7 +92,7 @@ const About = () => {
             <a
               href={resume}
               target="_blank"
-              className="hover:text-white underline"
+              className="hover:text-white hover:underline"
             >
               Resume
             </a>
@@ -106,7 +106,7 @@ const About = () => {
                 <a
                   href={paragraph.link.url}
                   target="_blank"
-                  className="underline text-blue-400 hover:text-blue-500"
+                  className="hover:underline text-blue-400 hover:text-blue-500"
                 >
                   {paragraph.link.text}
                 </a>
