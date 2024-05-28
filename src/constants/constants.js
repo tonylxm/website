@@ -67,7 +67,7 @@ export const about = [
           text: "Emergency Q",
         },
         additional_text:
-          ", an award-winning healthtech company that reduces wait times and overcrowding in hospital emergency departments.",
+          ", an award-winning Māori-owned healthtech company that reduces wait times and overcrowding in hospital emergency departments.",
       },
       {
         text: "For 2024, I am the President of ",
@@ -76,7 +76,7 @@ export const about = [
           text: "SESA",
         },
         additional_text:
-          " - the Software Engineering Students Association at the University of Auckland. I lead an executive team of 17 to run social and career-focused events for the 350+ software engineering students at UoA, connecting them with each other as well as industry professionals.",
+          " - the Software Engineering Students Association at the University of Auckland. I lead an executive team of 17 to run social and career-focused events for our 450+ members, connecting them with each other as well as industry professionals.",
       },
     ],
   },
