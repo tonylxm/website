@@ -6,19 +6,19 @@ import {
   LinkSvg,
   ColourReactSvg,
   FirebaseSvg,
-  ColourTailwindCSSSvg,
+  ColourJavaScriptSvg,
   JavaSvg,
   CSS3Svg,
 } from "../assets/svg";
 
 const Projects = () => {
-  // Staggered animation
+  // To do: convert to swiping carousel
 
   return (
     <div className={`${styles.screen}`}>
       <div className="flex-[0.85]">
         <Animation>
-          <div className={`${styles.card} z-20 pb-28 lg:pb-44`}>
+          <div className={`${styles.card} z-20 pb-28 lg:pb-20`}>
             <h3 className={`${styles.sectionHeadText}`}>Projects</h3>
             <div className="grid grid-cols-1 lg:grid-cols-2">
               <a href={projects[0].deployed_url} target="_blank">
@@ -39,7 +39,7 @@ const Projects = () => {
                     &nbsp; + &nbsp;
                     <FirebaseSvg />
                     &nbsp; + &nbsp;
-                    <ColourTailwindCSSSvg />
+                    <ColourJavaScriptSvg />
                   </span>
                 </motion.div>
               </a>

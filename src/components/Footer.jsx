@@ -1,7 +1,7 @@
 import resume from "../assets/Tony Lim Resume.pdf";
 import {
   ReactSvg,
-  TailwindCSSSvg,
+  JavaScriptSvg,
   LinkedInSvg,
   GitHubSvg,
 } from "../assets/svg";
@@ -20,7 +20,7 @@ const Footer = () => {
             &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp; Made with &nbsp;
             <ReactSvg />
             &nbsp; + &nbsp;
-            <TailwindCSSSvg />
+            <JavaScriptSvg />
           </span>
           <div className="flex mt-4 sm:justify-center sm:mt-0">
             <LinkedInSvg />

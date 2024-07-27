@@ -1,4 +1,4 @@
-import { react, firebase, tailwind, java, css3 } from "./index.js";
+import { react, firebase, javascript, java, css3 } from "./index.js";
 
 export const LinkedInSvg = () => {
   return (
@@ -57,17 +57,18 @@ export const ReactSvg = () => {
   );
 };
 
-export const TailwindCSSSvg = () => {
+export const JavaScriptSvg = () => {
   return (
     <svg
       className="h-6"
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
-      fill="currentColor"
-      viewBox="0 0 24 22"
+      fill="#362978"
+      viewBox="0 0 512 512"
     >
-      <title>Tailwind CSS</title>
-      <path d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z" />
+      <title>JavaScript</title>
+      <rect width="512" height="512" rx="15%" fill="currentColor" />
+      <path d="M324 370c10 17 24 29 47 29c20 0 33-10 33 -24c0-16 -13 -22 -35 -32l-12-5c-35-15 -58 -33 -58 -72c0-36 27 -64 70 -64c31 0 53 11 68 39l-37 24c-8-15 -17 -21 -31 -21c-14 0-23 9 -23 21c0 14 9 20 30 29l12 5c41 18 64 35 64 76c0 43-34 67 -80 67c-45 0-74 -21 -88 -49zm-170 4c8 13 14 25 31 25c16 0 26-6 26 -30V203h48v164c0 50-29 72 -72 72c-39 0-61 -20 -72 -44z" />
     </svg>
   );
 };
@@ -111,13 +112,13 @@ export const FirebaseSvg = () => {
   );
 };
 
-export const ColourTailwindCSSSvg = () => {
+export const ColourJavaScriptSvg = () => {
   return (
     <img
-      className="h-7"
+      className="h-6"
       aria-hidden="true"
-      src={tailwind}
-      title="Tailwind CSS"
+      src={javascript}
+      title="JavaScript"
     />
   );
 };
