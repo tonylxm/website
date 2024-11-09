@@ -109,9 +109,9 @@ const About = () => {
               >
                 Sandfield
               </a>{" "}
-              helping businesses get a competitive edge through flexible
-              tailored software solutions. I was previously a Software
-              Development Intern at{" "}
+              helping businesses get a competitive edge through tailored
+              software solutions. I was previously a Software Development Intern
+              at{" "}
               <a
                 href="https://www.emergencyq.com/"
                 target="_blank"

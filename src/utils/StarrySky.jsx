@@ -4,7 +4,7 @@ import { isTouchDevice } from "./CustomCursor";
 
 const StarrySky = () => {
   const [numStars] = useState(75);
-  // const [numShootingStars] = useState(50);
+  const [numShootingStars] = useState(25);
   const [dimensions, setDimensions] = useState({
     vw: window.innerWidth,
     vh: window.innerHeight,
@@ -26,19 +26,18 @@ const StarrySky = () => {
     });
   };
 
-  // const shootingStars = () => {
-  //   anime({
-  //     targets: ".wish",
-  //     easing: "linear",
-  //     loop: true,
-  //     delay: (el, i) => 1000 * i,
-  //     opacity: [{ duration: 700, value: "1" }],
-  //     width: [{ value: "150px" }, { value: "0px" }],
-  //     translateX: 350,
-  //     translateZ: 0,
-  //     translate3d: 0,
-  //   });
-  // };
+  const shootingStars = () => {
+    anime({
+      targets: ".wish",
+      easing: "linear",
+      loop: true,
+      delay: (el, i) => 1000 * i,
+      opacity: [{ duration: 700, value: "1" }],
+      width: [{ value: "150px" }, { value: "0px" }],
+      translateX: 350,
+      duration: 1000,
+    });
+  };
 
   const handleResize = () => {
     setDimensions({
@@ -48,8 +47,8 @@ const StarrySky = () => {
   };
 
   useEffect(() => {
-    if (isTouchDevice()) return;  // TODO: fix error on mobile
-    
+    if (isTouchDevice()) return;
+
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -58,8 +57,13 @@ const StarrySky = () => {
 
   useLayoutEffect(() => {
     starryNight();
-    // shootingStars();
-  }, []);
+    shootingStars();
+
+    return () => {
+      anime.remove(".star");
+      anime.remove(".wish");
+    };
+  }, [dimensions]);
 
   const memoizedStarPositions = useMemo(
     () =>
@@ -70,14 +74,14 @@ const StarrySky = () => {
     [numStars, dimensions]
   );
 
-  // const memoizedShootingStarPositions = useMemo(
-  //   () =>
-  //     Array.from({ length: numShootingStars }, () => ({
-  //       x: getRandomX(),
-  //       y: getRandomY(),
-  //     })),
-  //   [numShootingStars, dimensions]
-  // );
+  const memoizedShootingStarPositions = useMemo(
+    () =>
+      Array.from({ length: numShootingStars }, () => ({
+        x: getRandomX(),
+        y: getRandomY(),
+      })),
+    [numShootingStars, dimensions]
+  );
 
   return (
     <div>
@@ -97,9 +101,10 @@ const StarrySky = () => {
         className="absolute inset-0 w-full h-screen"
         style={{
           transform: "translateX(calc(50vw - 50%)) translateY(calc(50vh - 60%)) rotate(120deg)",
+          willChange: "transform",
         }}
       >
-        {/* {memoizedShootingStarPositions.map(({ x, y }, index) => (
+        {memoizedShootingStarPositions.map(({ x, y }, index) => (
           <div
             key={index}
             className="wish absolute w-0 h-0.5"
@@ -108,9 +113,10 @@ const StarrySky = () => {
               top: `${x}px`,
               background: "linear-gradient(-45deg, white, rgba(0, 0, 255, 0))",
               filter: "drop-shadow(0 0 6px white)",
+              willChange: "transform, opacity",
             }}
           />
-        ))} */}
+        ))}
       </div>
     </div>
   );
