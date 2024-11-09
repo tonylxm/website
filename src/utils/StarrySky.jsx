@@ -12,7 +12,7 @@ const StarrySky = () => {
   const [shootingStarPosition, setShootingStarPosition] = useState({
     x: Math.random() * window.innerWidth,
     y: Math.random() * window.innerHeight,
-    delay: 0.1,
+    delay: 1.5,
   });
 
   const getRandomX = () => Math.floor(Math.random() * dimensions.vw).toString();
