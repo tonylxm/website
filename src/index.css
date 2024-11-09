@@ -18,3 +18,29 @@
     height: -webkit-fill-available;
   }
 }
+
+
+@keyframes shootingStar {
+  0% {
+    opacity: 0;
+    width: 0;
+    transform: translateX(0);
+  }
+  10% {
+    opacity: 1;
+    width: 150px;
+  }
+  100% {
+    opacity: 0;
+    width: 0;
+    transform: translateX(350px);
+  }
+}
+
+.star {
+  animation: twinkle 1.4s linear infinite alternate;
+}
+
+.wish {
+  animation: shootingStar 1.5s linear infinite;
+}
