@@ -4,7 +4,7 @@ import profile from "../assets/profile.jpg";
 import { LinkedInSvg, GitHubSvg } from "../assets/svg";
 import resume from "../assets/Tony Lim Resume.pdf";
 import Animation from "../utils/Animation";
-import { titles, about } from "../constants/constants";
+import { titles } from "../constants/constants";
 import TypewriterEffect from "../utils/TyperwriterEffect";
 import { TYPING_SPEED } from "../utils/TypewriterSpeeds";
 import { useSpring, animated } from "react-spring";
@@ -97,24 +97,47 @@ const About = () => {
               Resume
             </a>
           </div>
-          <div
-            className={`${styles.sectionText} text-left text-white mt-4 sm:md:mt-6 lg:xl:mt-10`}
-          >
-            {about[0].paragraphs.map((paragraph, index) => (
-              <div key={index}>
-                {paragraph.text}
-                <a
-                  href={paragraph.link.url}
-                  target="_blank"
-                  className="hover:underline text-blue-400 hover:text-blue-500"
-                >
-                  {paragraph.link.text}
-                </a>
-                {paragraph.additional_text}
-                <br />
-                <br />
-              </div>
-            ))}
+          <div className={`${styles.sectionText} text-left text-white mt-4`}>
+            <p>
+              I am passionate about solving problems that make a positive
+              difference in people's lives. Currently, I am a Software Engineer
+              Intern at{" "}
+              <a
+                href="https://www.sandfield.co.nz/"
+                target="_blank"
+                className="text-blue-400 hover:text-blue-500 hover:underline"
+              >
+                Sandfield
+              </a>{" "}
+              helping businesses get a competitive edge through flexible
+              tailored software solutions. I was previously a Software
+              Development Intern at{" "}
+              <a
+                href="https://www.emergencyq.com/"
+                target="_blank"
+                className="text-blue-400 hover:text-blue-500 hover:underline"
+              >
+                Emergency Q
+              </a>{" "}
+              working on reducing wait times and overcrowding in hospital
+              emergency departments.
+            </p>
+            <br />
+            <p>
+              In 2024, I was the President of the{" "}
+              <a
+                href="https://www.sesa.org.nz/"
+                target="_blank"
+                className="text-blue-400 hover:text-blue-500 hover:underline"
+              >
+                SESA
+              </a>{" "}
+              - the Software Engineering Students Association. I led an
+              executive team of 17 to run social and career-focused events for
+              550+ members, connecting them with each other as well as industry
+              professionals. For 2025, I have stepped into the role of Industry
+              Event Lead.
+            </p>
           </div>
         </Animation>
       </div>
