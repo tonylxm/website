@@ -2,12 +2,12 @@ import {
   code,
   sesa,
   foodie,
-  coffee,
   hooper,
   leader,
+  hackathon_winner,
   uoa,
-  p1ac,
-  bg,
+  dlp,
+  blue,
 } from "../assets";
 import { xv, potioncraft } from "../assets/projects";
 
@@ -32,28 +32,28 @@ export const titles = [
     img: foodie,
   },
   {
-    title: "Penultimate Software Engineering Student",
+    title: "Final Year Software Engineering Student",
     img: uoa,
-  },
-  {
-    title: "Hooper",
-    img: hooper,
   },
   {
     title: "Leader & Change Maker",
     img: leader,
   },
   {
-    title: "Engineering Tutor",
-    img: p1ac,
+    title: "Hackathon Winner",
+    img: hackathon_winner,
   },
   {
-    title: "Coffee Lover",
-    img: coffee,
+    title: "Hooper",
+    img: hooper,
+  },
+  {
+    title: "Sir Colin Maiden Scholar",
+    img: dlp,
   },
   {
     title: "Tony Lim",
-    img: bg,
+    img: blue,
   },
 ];
 

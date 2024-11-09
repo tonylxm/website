@@ -1,12 +1,12 @@
 export { default as code } from "./about-bgs/code.jpg";
-export { default as sesa } from "./about-bgs/SESA.jpg";
-export { default as coffee } from "./about-bgs/coffee.jpg";
-export { default as foodie } from "./about-bgs/koreanbbq3.jpg";
+export { default as sesa } from "./about-bgs/SESA_2024.jpg";
+export { default as foodie } from "./about-bgs/korean_bbq.jpg";
 export { default as hooper } from "./about-bgs/hooper.jpg";
 export { default as leader } from "./about-bgs/leader.jpg";
-export { default as uoa } from "./about-bgs/uoa.jpg";
-export { default as p1ac } from "./about-bgs/P1AC.jpg";
-export { default as bg } from "./about-bgs/bg.jpg";
+export { default as uoa } from "./about-bgs/UoA.jpg";
+export { default as dlp } from "./about-bgs/DLP.jpg";
+export { default as hackathon_winner } from "./about-bgs/hackathon_winner.png";
+export { default as blue } from "./about-bgs/blue.jpg";
 
 export { default as react } from "./tech/react.svg";
 export { default as angular } from "./tech/angular.svg";
