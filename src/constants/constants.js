@@ -2,12 +2,12 @@ import {
   code,
   sesa,
   foodie,
-  coffee,
   hooper,
   leader,
+  hackathon_winner,
   uoa,
-  p1ac,
-  bg,
+  dlp,
+  blue,
 } from "../assets";
 import { xv, potioncraft } from "../assets/projects";
 
@@ -24,7 +24,7 @@ export const titles = [
     img: code,
   },
   {
-    title: "President of SESA",
+    title: "President of SESA (2024)",
     img: sesa,
   },
   {
@@ -32,53 +32,28 @@ export const titles = [
     img: foodie,
   },
   {
-    title: "Penultimate Software Engineering Student",
+    title: "Final Year Software Engineering Student",
     img: uoa,
-  },
-  {
-    title: "Hooper",
-    img: hooper,
   },
   {
     title: "Leader & Change Maker",
     img: leader,
   },
   {
-    title: "Engineering Tutor",
-    img: p1ac,
+    title: "Hackathon Winner",
+    img: hackathon_winner,
   },
   {
-    title: "Coffee Lover",
-    img: coffee,
+    title: "Hooper",
+    img: hooper,
+  },
+  {
+    title: "Sir Colin Maiden Scholar",
+    img: dlp,
   },
   {
     title: "Tony Lim",
-    img: bg,
-  },
-];
-
-export const about = [
-  {
-    paragraphs: [
-      {
-        text: "I am passionate about solving problems that make a positive difference in people's lives. Last summer, I achieved this as Software Development Intern at ",
-        link: {
-          url: "https://www.emergencyq.com/",
-          text: "Emergency Q",
-        },
-        additional_text:
-          ", an award-winning Māori-owned healthtech company that reduces wait times and overcrowding in hospital emergency departments.",
-      },
-      {
-        text: "For 2024, I am the President of ",
-        link: {
-          url: "https://www.sesa.org.nz/",
-          text: "SESA",
-        },
-        additional_text:
-          " - the Software Engineering Students Association at the University of Auckland. I lead an executive team of 17 to run social and career-focused events for our 450+ members, connecting them with each other as well as industry professionals.",
-      },
-    ],
+    img: blue,
   },
 ];
 
@@ -99,30 +74,3 @@ export const projects = [
     github_url: "https://github.com/tonylxm/escAIpe-room-game-potioncraft",
   },
 ];
-
-// export const testimonials = [
-//   {
-//     testimonial:
-//       "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-//     name: "Sara Lee",
-//     designation: "CFO",
-//     company: "Acme Co",
-//     image: "https://randomuser.me/api/portraits/women/4.jpg",
-//   },
-//   {
-//     testimonial:
-//       "I've never met a web developer who truly cares about their clients' success like Rick does.",
-//     name: "Chris Brown",
-//     designation: "COO",
-//     company: "DEF Corp",
-//     image: "https://randomuser.me/api/portraits/men/5.jpg",
-//   },
-//   {
-//     testimonial:
-//       "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-//     name: "Lisa Wang",
-//     designation: "CTO",
-//     company: "456 Enterprises",
-//     image: "https://randomuser.me/api/portraits/women/6.jpg",
-//   },
-// ];
