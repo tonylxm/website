@@ -1,6 +1,6 @@
 import Animation from "../utils/Animation";
 import { styles } from "../styles";
-import { projects } from "../constants/constants";
+import { projects } from "../data/constants";
 import { motion } from "framer-motion";
 import {
   LinkSvg,
@@ -12,8 +12,6 @@ import {
 } from "../assets/svg";
 
 const Projects = () => {
-  // To do: convert to swiping carousel
-
   return (
     <div className={`${styles.screen}`}>
       <div className="flex-[0.85]">

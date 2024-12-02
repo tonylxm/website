@@ -55,9 +55,11 @@ const Hero = () => {
         className="relative z-20 mb-[10%] lg:mb-[6%]"
       >
         <h1 className={`${styles.heroHeadText}`}>
-          <span>{hero[0].head_text}</span>
+          <span>Tony Lim</span>
         </h1>
-        <h2 className={`${styles.heroSubText}`}>{hero[0].sub_text}</h2>
+        <h2 className={`${styles.heroSubText}`}>
+          Software engineer based in Auckland, New Zealand
+        </h2>
       </motion.div>
 
       <div
