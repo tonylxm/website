@@ -1,6 +1,5 @@
 import { styles } from "../styles";
 import { useRef } from "react";
-import { hero } from "../constants/constants";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useMediaQuery } from "@chakra-ui/react";
 import rangitotoTop from "../assets/rangitoto-top.png";

@@ -4,7 +4,7 @@ import profile from "../assets/profile.jpg";
 import { LinkedInSvg, GitHubSvg } from "../assets/svg";
 import resume from "../assets/Tony Lim Resume.pdf";
 import Animation from "../utils/Animation";
-import { titles } from "../constants/constants";
+import { titles } from "../data/about";
 import TypewriterEffect from "../utils/TyperwriterEffect";
 import { TYPING_SPEED } from "../utils/TypewriterSpeeds";
 import { useSpring, animated } from "react-spring";
