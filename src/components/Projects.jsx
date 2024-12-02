@@ -1,5 +1,5 @@
 import Animation from "../utils/Animation";
-import { styles } from "../styles";
+import { styles } from "../styles/styles";
 import { projects } from "../data/constants";
 import { motion } from "framer-motion";
 import {

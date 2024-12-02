@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { styles } from "../styles";
+import { styles } from "../styles/styles";
 import profile from "../assets/profile.jpg";
 import { LinkedInSvg, GitHubSvg } from "../../public/svg/svg";
 import resume from "../assets/Tony Lim Resume.pdf";
