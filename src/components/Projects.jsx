@@ -1,6 +1,6 @@
 import Animation from "../utils/Animation";
-import { styles } from "../styles";
-import { projects } from "../data/constants";
+import { styles } from "../styles/styles";
+import { projects } from "../data/projects";
 import { motion } from "framer-motion";
 import {
   LinkSvg,
