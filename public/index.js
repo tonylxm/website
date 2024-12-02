@@ -7,15 +7,3 @@ export { default as uoa } from "./about-bgs/UoA.jpg";
 export { default as dlp } from "./about-bgs/DLP.jpg";
 export { default as hackathon_winner } from "./about-bgs/hackathon_winner.png";
 export { default as blue } from "./about-bgs/blue.jpg";
-
-export { default as react } from "./tech/react.svg";
-export { default as angular } from "./tech/angular.svg";
-export { default as firebase } from "./tech/firebase.svg";
-export { default as tailwind } from "./tech/tailwind.svg";
-export { default as java } from "./tech/java.svg";
-export { default as python } from "./tech/python.svg";
-export { default as html5 } from "./tech/html5.svg";
-export { default as css3 } from "./tech/css3.svg";
-export { default as javascript } from "./tech/javascript.svg";
-export { default as typescript } from "./tech/typescript.svg";
-export { default as git } from "./tech/git.svg";

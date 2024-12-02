@@ -2,16 +2,9 @@ import Animation from "../utils/Animation";
 import { styles } from "../styles/styles";
 import { projects } from "../data/projects";
 import { motion } from "framer-motion";
-import {
-  LinkSvg,
-  ColourReactSvg,
-  FirebaseSvg,
-  ColourJavaScriptSvg,
-  JavaSvg,
-  CSS3Svg,
-} from "../../public/svg/LinkSVG";
+import LinkSvg from "../../public/svg/LinkSVG";
 
-const Projects = () => {
+export default function Projects() {
   return (
     <div className={`${styles.screen}`}>
       <div className="flex-[0.85]">
@@ -33,11 +26,6 @@ const Projects = () => {
                   <span
                     className={`${styles.sectionText} ${styles.projectTechStack}`}
                   >
-                    <ColourReactSvg />
-                    &nbsp; + &nbsp;
-                    <FirebaseSvg />
-                    &nbsp; + &nbsp;
-                    <ColourJavaScriptSvg />
                   </span>
                 </motion.div>
               </a>
@@ -56,9 +44,6 @@ const Projects = () => {
                   <span
                     className={`${styles.sectionText} ${styles.projectTechStack}`}
                   >
-                    <JavaSvg />
-                    &nbsp; + &nbsp;
-                    <CSS3Svg />
                   </span>
                 </motion.div>
               </a>
@@ -68,6 +53,4 @@ const Projects = () => {
       </div>
     </div>
   );
-};
-
-export default Projects;
+}

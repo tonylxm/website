@@ -1,22 +1,22 @@
-import { useState, useRef } from 'react';
-import emailjs from '@emailjs/browser';
-import Animation from '../utils/Animation';
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
+import Animation from "../utils/Animation";
 
-import { styles } from '../styles';
+import { styles } from "../styles/styles";
 
-const Contact = () => {
+export default function Contact() {
   const formRef = useRef();
   const [form, setForm] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
-  }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,32 +27,36 @@ const Contact = () => {
     // template_y49vb0t
     // service_zw19n7e
 
-    emailjs.send(
-      'service_zw19n7e',
-      'template_y49vb0t',
-      {
-        from_name: form.name,
-        to_name: 'Tony',
-        from_email: form.email,
-        to_email: 'tonylim8669@gmail.com',
-        message: form.message
-      },
-      'D8OsdM0fe8rYe2tFv'
-    )
-      .then(() => {
-        setLoading(false);
-        alert('Your message has been sent!');
-        setForm({
-          name: '',
-          email: '',
-          message: ''
-        })
-      }, (error) => {
-        setLoading(false);
-        console.log(error);
-        alert('Something went wrong, please try again.');
-      })
-  }
+    emailjs
+      .send(
+        "service_zw19n7e",
+        "template_y49vb0t",
+        {
+          from_name: form.name,
+          to_name: "Tony",
+          from_email: form.email,
+          to_email: "tonylim8669@gmail.com",
+          message: form.message,
+        },
+        "D8OsdM0fe8rYe2tFv"
+      )
+      .then(
+        () => {
+          setLoading(false);
+          alert("Your message has been sent!");
+          setForm({
+            name: "",
+            email: "",
+            message: "",
+          });
+        },
+        (error) => {
+          setLoading(false);
+          console.log(error);
+          alert("Something went wrong, please try again.");
+        }
+      );
+  };
 
   return (
     <div className={`${styles.screen} h-[800px] mb-16 lg:mb-20`}>
@@ -97,23 +101,17 @@ const Contact = () => {
                   value={form.message}
                   onChange={handleChange}
                   placeholder="Your message"
-                  className={styles.formText + ' resize-none'}
+                  className={styles.formText + " resize-none"}
                   required
                 />
               </label>
-              <button
-                type="submit"
-                className={styles.button}
-              >
-                {loading ? 'Sending...' : 'Send'}
+              <button type="submit" className={styles.button}>
+                {loading ? "Sending..." : "Send"}
               </button>
             </form>
           </div>
         </Animation>
       </div>
-    </div >
-
-  )
+    </div>
+  );
 }
-
-export default Contact

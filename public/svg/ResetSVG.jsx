@@ -1,4 +1,4 @@
-export const ResetSVG = () => {
+const ResetSVG = () => {
   return (
     <svg
       className="h-6"
@@ -12,3 +12,5 @@ export const ResetSVG = () => {
     </svg>
   );
 };
+
+export default ResetSVG;
