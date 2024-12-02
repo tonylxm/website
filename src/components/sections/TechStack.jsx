@@ -1,12 +1,12 @@
 import { useState, useRef, useEffect } from "react";
-import Animation from "../utils/Animation";
-import Stack from "../utils/Stack";
-import { styles } from "../styles";
-import { ResetSvg } from "../assets/svg";
+import Animation from "@/utils/Animation";
+import Stack from "@/components/common/Stack";
+import { styles } from "@/styles/styles";
+import ResetSVG from "@/public/svg/ResetSVG";
 import { motion, useInView } from "framer-motion";
-import { isTouchDevice } from "../utils/CustomCursor";
+import { isTouchDevice } from "@/utils/CustomCursor";
 
-const TechStack = () => {
+export default function TechStack() {
   const [shouldRenderStack, setShouldRenderStack] = useState(true);
   const ref = useRef(null);
   const isInView = useInView(ref);
@@ -50,7 +50,7 @@ const TechStack = () => {
                 className="text-tertiary hover:text-white mr-3"
                 onClick={handleReset}
               >
-                <ResetSvg />
+                <ResetSVG />
               </button>
             </div>
             <div className="flex flex-col items-center">
@@ -61,6 +61,4 @@ const TechStack = () => {
       </div>
     </motion.div>
   );
-};
-
-export default TechStack;
+}

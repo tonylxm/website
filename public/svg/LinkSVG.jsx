@@ -1,4 +1,4 @@
-export const LinkSVG = () => {
+const LinkSVG = () => {
   return (
     <svg
       className="h-6 absolute top-5 right-5"
@@ -11,3 +11,5 @@ export const LinkSVG = () => {
     </svg>
   );
 };
+
+export default LinkSVG;

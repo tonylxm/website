@@ -1,17 +1,10 @@
-import Animation from "../utils/Animation";
-import { styles } from "../styles/styles";
-import { projects } from "../data/projects";
+import Animation from "@/utils/Animation";
+import { styles } from "@/styles/styles";
+import { projects } from "@/data/projects";
 import { motion } from "framer-motion";
-import {
-  LinkSvg,
-  ColourReactSvg,
-  FirebaseSvg,
-  ColourJavaScriptSvg,
-  JavaSvg,
-  CSS3Svg,
-} from "../../public/svg/LinkSVG";
+import LinkSvg from "@/public/svg/LinkSVG";
 
-const Projects = () => {
+export default function Projects() {
   return (
     <div className={`${styles.screen}`}>
       <div className="flex-[0.85]">
@@ -29,15 +22,9 @@ const Projects = () => {
                   <p className={`${styles.sectionText} ${styles.projectText}`}>
                     {projects[0].description}
                   </p>
-                  <LinkSvg />
                   <span
                     className={`${styles.sectionText} ${styles.projectTechStack}`}
                   >
-                    <ColourReactSvg />
-                    &nbsp; + &nbsp;
-                    <FirebaseSvg />
-                    &nbsp; + &nbsp;
-                    <ColourJavaScriptSvg />
                   </span>
                 </motion.div>
               </a>
@@ -52,13 +39,9 @@ const Projects = () => {
                   <p className={`${styles.sectionText} ${styles.projectText}`}>
                     {projects[1].description}
                   </p>
-                  <LinkSvg />
                   <span
                     className={`${styles.sectionText} ${styles.projectTechStack}`}
                   >
-                    <JavaSvg />
-                    &nbsp; + &nbsp;
-                    <CSS3Svg />
                   </span>
                 </motion.div>
               </a>
@@ -68,6 +51,4 @@ const Projects = () => {
       </div>
     </div>
   );
-};
-
-export default Projects;
+}

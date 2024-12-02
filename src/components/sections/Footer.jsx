@@ -1,14 +1,12 @@
-import resume from "../assets/Tony Lim Resume.pdf";
-import {
-  ReactSvg,
-  JavaScriptSvg,
-  LinkedInSvg,
-  GitHubSvg,
-} from "../assets/svg";
+import resume from "@/public/Tony Lim Resume.pdf";
+import LinkedInSVG from "@/public/svg/LinkedInSVG";
+import GitHubSVG from "@/public/svg/GitHubSVG";
+import ReactSVG from "@/public/svg/ReactSVG";
+import JavaScriptSVG from "@/public/svg/JavaScriptSVG";
 
 const currentYear = new Date().getFullYear();
 
-const Footer = () => {
+export default function Footer() {
   return (
     <footer className="bg-secondary">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-8 text-tertiary">
@@ -18,13 +16,13 @@ const Footer = () => {
               &copy; {currentYear} Tony Lim
             </a>
             &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp; Made with &nbsp;
-            <ReactSvg />
+            <ReactSVG />
             &nbsp; + &nbsp;
-            <JavaScriptSvg />
+            <JavaScriptSVG />
           </span>
           <div className="flex mt-4 sm:justify-center sm:mt-0">
-            <LinkedInSvg />
-            <GitHubSvg />
+            <LinkedInSVG />
+            <GitHubSVG />
             &nbsp;
             <p className="ms-5 me-5">|</p>
             <a
@@ -40,5 +38,3 @@ const Footer = () => {
     </footer>
   );
 };
-
-export default Footer;

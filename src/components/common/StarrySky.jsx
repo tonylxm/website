@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useLayoutEffect, useMemo } from "react";
 import anime from "animejs";
-import { isTouchDevice } from "./CustomCursor";
+import { isTouchDevice } from "@/utils/CustomCursor";
 
 const StarrySky = () => {
   const [numStars] = useState(75);

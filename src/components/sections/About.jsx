@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { styles } from "../styles";
-import profile from "../assets/profile.jpg";
-import { LinkedInSvg, GitHubSvg } from "../../public/svg/LinkSVG";
-import resume from "../assets/Tony Lim Resume.pdf";
-import Animation from "../utils/Animation";
-import { titles } from "../data/about";
-import TypewriterEffect from "../utils/TyperwriterEffect";
-import { TYPING_SPEED } from "../utils/TypewriterSpeeds";
+import { styles } from "@/styles/styles";
+import profile from "/profile.jpg";
+import LinkedInSVG from "@/public/svg/LinkedInSVG";
+import GitHubSVG from "@/public/svg/GitHubSVG";
+import resume from "@/public/Tony Lim Resume.pdf";
+import Animation from "@/utils/Animation";
+import { titles } from "@/data/about";
+import TypewriterEffect from "@/utils/TyperwriterEffect";
+import { TYPING_SPEED } from "@/utils/TypewriterSpeeds";
 import { useSpring, animated } from "react-spring";
 
-const About = () => {
+export default function About() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {}, [currentIndex]);
@@ -85,8 +86,8 @@ const About = () => {
           <div
             className={`${styles.sectionText} text-tertiary flex mt-3 justify-center items-center`}
           >
-            <LinkedInSvg />
-            <GitHubSvg />
+            <LinkedInSVG />
+            <GitHubSVG />
             &nbsp;
             <p className="ms-5 me-5">|</p>
             <a
@@ -143,6 +144,4 @@ const About = () => {
       </div>
     </div>
   );
-};
-
-export default About;
+}

@@ -1,16 +1,15 @@
 import { useEffect, useRef } from "react";
 import Matter from "matter-js";
-import {
-  html5,
-  css3,
-  javascript,
-  typescript,
-  react,
-  angular,
-  tailwind,
-  java,
-  python,
-} from "../assets";
+
+import html5 from "/svg/tech-stack/html5.svg";
+import css3 from "/svg/tech-stack/css3.svg";
+import javascript from "/svg/tech-stack/javascript.svg";
+import typescript from "/svg/tech-stack/typescript.svg";
+import react from "/svg/tech-stack/react.svg";
+import angular from "/svg/tech-stack/angular.svg";
+import tailwind from "/svg/tech-stack/tailwind.svg";
+import java from "/svg/tech-stack/java.svg";
+import python from "/svg/tech-stack/python.svg";
 
 const Stack = () => {
   const scene = useRef();
