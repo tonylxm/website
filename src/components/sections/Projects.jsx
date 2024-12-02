@@ -1,8 +1,8 @@
-import Animation from "../utils/Animation";
-import { styles } from "../styles/styles";
-import { projects } from "../data/projects";
+import Animation from "@/utils/Animation";
+import { styles } from "@/styles/styles";
+import { projects } from "@/data/projects";
 import { motion } from "framer-motion";
-import LinkSvg from "../../public/svg/LinkSVG";
+import LinkSvg from "@/public/svg/LinkSVG";
 
 export default function Projects() {
   return (
@@ -22,7 +22,6 @@ export default function Projects() {
                   <p className={`${styles.sectionText} ${styles.projectText}`}>
                     {projects[0].description}
                   </p>
-                  <LinkSvg />
                   <span
                     className={`${styles.sectionText} ${styles.projectTechStack}`}
                   >
@@ -40,7 +39,6 @@ export default function Projects() {
                   <p className={`${styles.sectionText} ${styles.projectText}`}>
                     {projects[1].description}
                   </p>
-                  <LinkSvg />
                   <span
                     className={`${styles.sectionText} ${styles.projectTechStack}`}
                   >

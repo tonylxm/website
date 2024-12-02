@@ -1,10 +1,10 @@
-import { styles } from "../styles/styles";
+import { styles } from "@/styles/styles";
 import { useRef } from "react";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useMediaQuery } from "@chakra-ui/react";
-import rangitotoTop from "../../public/rangitoto-top.png";
-import rangitotoBottom from "../../public/rangitoto-bottom.jpg";
-import StarrySky from "../utils/StarrySky";
+import rangitotoTop from "/rangitoto-top.png";
+import rangitotoBottom from "/rangitoto-bottom.jpg";
+import StarrySky from "@/components/common/StarrySky";
 
 export default function Hero() {
   const textRef = useRef(null);
@@ -114,4 +114,4 @@ export default function Hero() {
       </div>
     </div>
   );
-};
+}

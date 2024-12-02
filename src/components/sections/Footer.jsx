@@ -1,8 +1,8 @@
-import resume from "../../public/Tony Lim Resume.pdf";
-import GitHubSVG from "../../public/svg/GitHubSVG";
-import LinkedInSVG from "../../public/svg/LinkedInSVG";
-import ReactSVG from "../../public/svg/ReactSVG";
-import JavaScriptSVG from "../../public/svg/JavaScriptSVG";
+import resume from "@/public/Tony Lim Resume.pdf";
+import LinkedInSVG from "@/public/svg/LinkedInSVG";
+import GitHubSVG from "@/public/svg/GitHubSVG";
+import ReactSVG from "@/public/svg/ReactSVG";
+import JavaScriptSVG from "@/public/svg/JavaScriptSVG";
 
 const currentYear = new Date().getFullYear();
 

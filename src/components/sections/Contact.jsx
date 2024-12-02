@@ -1,8 +1,8 @@
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
-import Animation from "../utils/Animation";
+import Animation from "@/utils/Animation";
 
-import { styles } from "../styles/styles";
+import { styles } from "@/styles/styles";
 
 export default function Contact() {
   const formRef = useRef();

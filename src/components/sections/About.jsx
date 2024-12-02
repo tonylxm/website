@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { styles } from "../styles/styles";
-import profile from "../../public/profile.jpg";
-import LinkedInSVG from "../../public/svg/LinkedInSVG";
-import GitHubSVG from "../../public/svg/GitHubSVG";
-import resume from "../../public/Tony Lim Resume.pdf";
-import Animation from "../utils/Animation";
-import { titles } from "../data/about";
-import TypewriterEffect from "../utils/TyperwriterEffect";
-import { TYPING_SPEED } from "../utils/TypewriterSpeeds";
+import { styles } from "@/styles/styles";
+import profile from "/profile.jpg";
+import LinkedInSVG from "@/public/svg/LinkedInSVG";
+import GitHubSVG from "@/public/svg/GitHubSVG";
+import resume from "@/public/Tony Lim Resume.pdf";
+import Animation from "@/utils/Animation";
+import { titles } from "@/data/about";
+import TypewriterEffect from "@/utils/TyperwriterEffect";
+import { TYPING_SPEED } from "@/utils/TypewriterSpeeds";
 import { useSpring, animated } from "react-spring";
 
 export default function About() {

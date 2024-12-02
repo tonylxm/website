@@ -1,4 +1,5 @@
-import { xv, potioncraft } from "../../public/projects";
+import xv from "/projects/XV.jpg";
+import potioncraft from "/projects/potioncraft.jpg";
 
 export const projects = [
   {

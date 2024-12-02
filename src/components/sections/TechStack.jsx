@@ -1,10 +1,10 @@
 import { useState, useRef, useEffect } from "react";
-import Animation from "../utils/Animation";
-import Stack from "../utils/Stack";
-import { styles } from "../styles/styles";
-import ResetSVG from "../../public/svg/ResetSVG";
+import Animation from "@/utils/Animation";
+import Stack from "@/components/common/Stack";
+import { styles } from "@/styles/styles";
+import ResetSVG from "@/public/svg/ResetSVG";
 import { motion, useInView } from "framer-motion";
-import { isTouchDevice } from "../utils/CustomCursor";
+import { isTouchDevice } from "@/utils/CustomCursor";
 
 export default function TechStack() {
   const [shouldRenderStack, setShouldRenderStack] = useState(true);
