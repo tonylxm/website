@@ -1,4 +1,4 @@
-import { react, firebase, javascript, java, css3 } from "./index.js";
+import { react, firebase, javascript, java, css3 } from "../index.js";
 
 export const LinkedInSvg = () => {
   return (

@@ -9,7 +9,7 @@ import {
   ColourJavaScriptSvg,
   JavaSvg,
   CSS3Svg,
-} from "../assets/svg";
+} from "../../public/svg/svg";
 
 const Projects = () => {
   return (
