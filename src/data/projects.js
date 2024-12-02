@@ -1,4 +1,4 @@
-import { xv, potioncraft } from "../assets/projects";
+import { xv, potioncraft } from "../../public/projects";
 
 export const projects = [
   {

@@ -8,7 +8,7 @@ import {
   uoa,
   dlp,
   blue,
-} from "../assets";
+} from "../../public";
 
 export const titles = [
   {

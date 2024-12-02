@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { styles } from "../styles";
 import profile from "../assets/profile.jpg";
-import { LinkedInSvg, GitHubSvg } from "../assets/svg";
+import { LinkedInSvg, GitHubSvg } from "../../public/svg/LinkSVG";
 import resume from "../assets/Tony Lim Resume.pdf";
 import Animation from "../utils/Animation";
 import { titles } from "../data/about";
