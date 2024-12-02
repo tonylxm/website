@@ -1,5 +1,5 @@
 import Animation from "../utils/Animation";
-import { styles } from "../styles/styles";
+import { styles } from "../styles";
 import { projects } from "../data/constants";
 import { motion } from "framer-motion";
 import {
@@ -9,7 +9,7 @@ import {
   ColourJavaScriptSvg,
   JavaSvg,
   CSS3Svg,
-} from "../../public/svg/svg";
+} from "../../public/svg/LinkSVG";
 
 const Projects = () => {
   return (

@@ -1,4 +1,4 @@
-import { styles } from "../styles/styles";
+import { styles } from "../styles";
 import { useRef } from "react";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useMediaQuery } from "@chakra-ui/react";
