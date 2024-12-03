@@ -1,4 +1,3 @@
-import Animation from "@/utils/Animation";
 import { styles } from "@/styles/styles";
 import { projects } from "@/data/projects";
 import { motion } from "framer-motion";
@@ -8,7 +7,6 @@ export default function Projects() {
   return (
     <div className={`${styles.screen}`}>
       <div className="flex-[0.85]">
-        <Animation>
           <div className={`${styles.card} z-20 pb-28 lg:pb-20`}>
             <h3 className={`${styles.sectionHeadText}`}>Projects</h3>
             <div className="grid grid-cols-1 lg:grid-cols-2">
@@ -47,7 +45,6 @@ export default function Projects() {
               </a>
             </div>
           </div>
-        </Animation>
       </div>
     </div>
   );
