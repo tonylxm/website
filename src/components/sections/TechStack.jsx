@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from "react";
-import Animation from "@/utils/Animation";
 import Stack from "@/components/common/Stack";
 import { styles } from "@/styles/styles";
 import ResetSVG from "@/public/svg/ResetSVG";
@@ -41,23 +40,21 @@ export default function TechStack() {
       animate={isInView ? { opacity: 1, y: 0 } : {}}
     >
       <div className="flex-[0.85]">
-        <Animation>
-          <div className={`${styles.card} h-[650px]`}>
-            <div className="flex items-center justify-between">
-              <h3 className={styles.sectionHeadText}>My Tech Stack</h3>
-              <button
-                type="button"
-                className="text-tertiary hover:text-white mr-3"
-                onClick={handleReset}
-              >
-                <ResetSVG />
-              </button>
-            </div>
-            <div className="flex flex-col items-center">
-              {isInView && shouldRenderStack && <Stack />}
-            </div>
+        <div className={`${styles.card} h-[650px]`}>
+          <div className="flex items-center justify-between">
+            <h3 className={styles.sectionHeadText}>My Tech Stack</h3>
+            <button
+              type="button"
+              className="text-tertiary hover:text-white mr-3"
+              onClick={handleReset}
+            >
+              <ResetSVG />
+            </button>
           </div>
-        </Animation>
+          <div className="flex flex-col items-center">
+            {isInView && shouldRenderStack && <Stack />}
+          </div>
+        </div>
       </div>
     </motion.div>
   );
