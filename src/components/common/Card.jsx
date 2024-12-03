@@ -16,15 +16,17 @@ export default function Card({
         <img src={img} alt={name} className="w-full h-56 object-cover" />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">{name}</h2>
+        <h2 className="card-title w-60">{name}</h2>
+        <div className="-mr-4 mt-[1px] absolute top-60 right-16">
+          {deployed_url ? <LinkSVG href={deployed_url} /> : <div />}
+        </div>
+        <div className="absolute mt-3 top-52 right-4">
+          {github_url ? <GitHubSVG href={github_url} /> : <div />}
+        </div>
         <p className="font-semibold">Role: {role.join(", ")}</p>
         <p className="mb-3">{description}</p>
-        <p>{techStack.join(" · ")}</p>
-        <div className="card-actions justify-end">
-          <div className="-mr-4 mt-[1px]">
-            {deployed_url ? <LinkSVG href={deployed_url} /> : <div />}
-          </div>
-          <GitHubSVG href={github_url} />
+        <div className="card-actions">
+          <p>{techStack.join(" · ")}</p>
         </div>
       </div>
     </div>

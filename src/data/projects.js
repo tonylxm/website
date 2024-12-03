@@ -20,7 +20,7 @@ export const projects = [
     img: potioncraft,
     techStack: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
     github_url: null,
-    deployed_url: "https://sesa.org.nz/",
+    deployed_url: null,
   },
   {
     name: "SESA Website",
