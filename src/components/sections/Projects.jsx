@@ -9,7 +9,7 @@ export default function Projects() {
     <div className={`${styles.screen} h-fit`}>
       <div className="flex-[0.85]">
         <div className={`${styles.card} z-20`}>
-          <h3 className={`${styles.sectionHeadText}`}>Projects</h3>
+          <h3 className={`${styles.sectionHeadText} mb-3`}>Projects</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 md:p-6 gap-6 justify-items-center">
             {projects.map((project) => (
               <Card
