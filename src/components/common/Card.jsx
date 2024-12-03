@@ -25,7 +25,7 @@ export default function Card({
         </div>
         <p className="font-semibold">Role: {role.join(", ")}</p>
         <p className="mb-3">{description}</p>
-        <div className="card-actions">
+        <div className="card-actions text-tertiary">
           <p>{techStack.join(" · ")}</p>
         </div>
       </div>
