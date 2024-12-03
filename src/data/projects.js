@@ -1,5 +1,7 @@
 import xv from "/projects/XV.jpg";
 import potioncraft from "/projects/potioncraft.jpg";
+import plantr from "/projects/plantr.png";
+import sesaWebsite from "/projects/sesa-website.jpg";
 
 export const projects = [
   {
@@ -7,29 +9,29 @@ export const projects = [
     role: ["Developer"],
     description:
       "🥇 1st place at the 2024 DEVS Hackathon. Match users with plants based on their preferences.",
-    img: potioncraft,
-    techStack: ["React", "Next.js", "TypeScript", "Firebase", "Tailwind CSS"],
-    github_url: null,
-    deployed_url: "https://sesa.org.nz/",
-  },
-  {
-    name: "WDCC x SESA Hackathon Website",
-    role: ["Project Manager", "Developer"],
-    description:
-      "Central hub for the annual WDCC x SESA Hackathon. Register, view past winners and more.",
-    img: potioncraft,
-    techStack: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
-    github_url: null,
+    img: plantr,
+    techStack: ["React", "Next.js", "TypeScript", "Firebase", "Tailwind CSS", "OpenAI API", "Pixabay API",],
+    github_url: "https://github.com/LocalhostLtd/DEV-Hackathon-2024",
     deployed_url: null,
   },
+  // {
+  //   name: "WDCC x SESA Hackathon Website",
+  //   role: ["Project Manager", "Developer"],
+  //   description:
+  //     "Central hub for the annual WDCC x SESA Hackathon. Register, view past winners and more.",
+  //   img: null,
+  //   techStack: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+  //   github_url: "https://github.com/sesauoa/wdccxsesahackathon.com",
+  //   deployed_url: null,
+  // },
   {
     name: "SESA Website",
     role: ["Project Manager", "Tech Lead", "Developer"],
     description:
       "Refreshed the SESA website with modern frameworks and designs for 2024.",
-    img: potioncraft,
+    img: sesaWebsite,
     techStack: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
-    github_url: null,
+    github_url: "https://github.com/sesauoa/sesa.org.nz",
     deployed_url: "https://sesa.org.nz/",
   },
   {
@@ -38,7 +40,7 @@ export const projects = [
     description:
       "EsAIpe room game. Integration of OpenAI API personifies wizard GameMaster.",
     img: potioncraft,
-    techStack: ["Java", "JavaFX", "CSS"],
+    techStack: ["Java", "JavaFX", "CSS", "OpenAI API"],
     github_url: "https://github.com/tonylxm/escAIpe-room-game-potioncraft",
     deployed_url: null,
   },
