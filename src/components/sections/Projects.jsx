@@ -1,50 +1,30 @@
 import { styles } from "@/styles/styles";
 import { projects } from "@/data/projects";
 import { motion } from "framer-motion";
-import LinkSvg from "@/public/svg/LinkSVG";
+import Card from "@/components/common/Card";
 
+// show more projects button
 export default function Projects() {
   return (
-    <div className={`${styles.screen}`}>
+    <div className={`${styles.screen} h-fit`}>
       <div className="flex-[0.85]">
-          <div className={`${styles.card} z-20 pb-28 lg:pb-20`}>
-            <h3 className={`${styles.sectionHeadText}`}>Projects</h3>
-            <div className="grid grid-cols-1 lg:grid-cols-2">
-              <a href={projects[0].deployed_url} target="_blank">
-                <motion.div
-                  className={styles.projectDiv}
-                  whileHover={{ scale: 1.03 }}
-                >
-                  <img src={projects[0].img} className={styles.projectCard} />
-                  <h2 className={styles.projectTitle}>{projects[0].name}</h2>
-                  <p className={`${styles.sectionText} ${styles.projectText}`}>
-                    {projects[0].description}
-                  </p>
-                  <span
-                    className={`${styles.sectionText} ${styles.projectTechStack}`}
-                  >
-                  </span>
-                </motion.div>
-              </a>
-
-              <a href={projects[1].github_url} target="_blank">
-                <motion.div
-                  className={styles.projectDiv}
-                  whileHover={{ scale: 1.03 }}
-                >
-                  <img src={projects[1].img} className={styles.projectCard} />
-                  <h2 className={styles.projectTitle}>{projects[1].name}</h2>
-                  <p className={`${styles.sectionText} ${styles.projectText}`}>
-                    {projects[1].description}
-                  </p>
-                  <span
-                    className={`${styles.sectionText} ${styles.projectTechStack}`}
-                  >
-                  </span>
-                </motion.div>
-              </a>
-            </div>
+        <div className={`${styles.card} z-20`}>
+          <h3 className={`${styles.sectionHeadText}`}>Projects</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 md:p-6 gap-6 justify-items-center">
+            {projects.map((project) => (
+              <Card
+                key={project.name}
+                name={project.name}
+                role={project.role}
+                description={project.description}
+                img={project.img}
+                techStack={project.techStack}
+                github_url={project.github_url}
+                deployed_url={project.deployed_url}
+              />
+            ))}
           </div>
+        </div>
       </div>
     </div>
   );

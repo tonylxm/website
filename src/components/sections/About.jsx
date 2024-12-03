@@ -87,7 +87,7 @@ export default function About() {
             className={`${styles.sectionText} text-tertiary flex mt-3 justify-center items-center`}
           >
             <LinkedInSVG />
-            <GitHubSVG />
+            <GitHubSVG href="https://github.com/tonylxm" />
             &nbsp;
             <p className="ms-5 me-5">|</p>
             <a
