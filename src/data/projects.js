@@ -3,7 +3,7 @@ import potioncraft from "/projects/potioncraft.jpg";
 
 export const projects = [
   {
-    name: "Plantr",
+    name: "Plantr 🌱",
     role: ["Developer"],
     description:
       "🥇 1st place at the 2024 DEVS Hackathon. Match users with plants based on their preferences.",

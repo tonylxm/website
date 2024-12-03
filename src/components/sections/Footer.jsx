@@ -22,7 +22,7 @@ export default function Footer() {
           </span>
           <div className="flex mt-4 sm:justify-center sm:mt-0">
             <LinkedInSVG />
-            <GitHubSVG />
+            <GitHubSVG href="https://github.com/tonylxm" />
             &nbsp;
             <p className="ms-5 me-5">|</p>
             <a
@@ -37,4 +37,4 @@ export default function Footer() {
       </div>
     </footer>
   );
-};
+}

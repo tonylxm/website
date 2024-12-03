@@ -1,12 +1,13 @@
-const GitHubSVG = () => {
+const GitHubSVG = ({ href }) => {
   return (
     <a
-      href="https://github.com/tonylxm"
+      href={href}
       target="_blank"
-      className="hover:text-white ms-5"
+      rel="noopener noreferrer"
+      className="ms-5"
     >
       <svg
-        className="h-6"
+        className="h-6 text-tertiary hover:text-white"
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         fill="currentColor"
