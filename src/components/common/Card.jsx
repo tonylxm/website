@@ -23,7 +23,10 @@ export default function Card({
         <div className="absolute mt-3 top-52 right-4">
           {github_url ? <GitHubSVG href={github_url} /> : <div />}
         </div>
-        <p className="font-semibold">Role: {role.join(", ")}</p>
+        <p className="font-semibold">
+          {role.length === 1 ? "Role: " : "Roles: "}
+          {role.join(", ")}
+        </p>
         <p className="mb-3">{description}</p>
         <div className="card-actions text-tertiary">
           <p>{techStack.join(" · ")}</p>
