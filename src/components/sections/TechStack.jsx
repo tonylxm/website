@@ -35,7 +35,7 @@ export default function TechStack() {
 
   return (
     <motion.div
-      className={`${styles.screen} mt-20 lg:mt-32`}
+      className={`${styles.screen}`}
       ref={ref}
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
