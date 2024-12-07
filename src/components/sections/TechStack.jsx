@@ -37,8 +37,6 @@ export default function TechStack() {
     <motion.div
       className={`${styles.screen}`}
       ref={ref}
-      initial={{ opacity: 0, y: 20 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
     >
       <div className="flex-[0.85]">
         <Animation>
