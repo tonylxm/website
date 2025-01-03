@@ -4,8 +4,6 @@ import GitHubSVG from "@/public/svg/GitHubSVG";
 import ReactSVG from "@/public/svg/ReactSVG";
 import JavaScriptSVG from "@/public/svg/JavaScriptSVG";
 
-const currentYear = new Date().getFullYear();
-
 export default function Footer() {
   return (
     <footer className="bg-secondary">
@@ -13,7 +11,7 @@ export default function Footer() {
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-md sm:text-center flex">
             <a href="#" className="hover:underline hover:text-white flex-none">
-              &copy; {currentYear} Tony Lim
+              &copy; {new Date().getFullYear()} Tony Lim
             </a>
             &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp; Made with &nbsp;
             <ReactSVG />
