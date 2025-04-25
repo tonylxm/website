@@ -23,8 +23,10 @@ export default function Card({
             {github_url && <GitHubSVG href={github_url} />}
           </div>
         </div>
-        <p className="font-semibold">
-          {role.length === 1 ? "Role: " : "Roles: "}
+        <p>
+          <span className="font-semibold">
+            {role.length === 1 ? "Role: " : "Roles: "}
+          </span>
           {role.join(", ")}
         </p>
         <p className="mb-3">{description}</p>
