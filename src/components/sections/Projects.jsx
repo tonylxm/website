@@ -1,7 +1,7 @@
 import { styles } from "@/styles/styles";
 import { projects } from "@/data/projects";
 import { useEffect, useRef } from "react";
-import { delay, motion, useAnimation, useInView } from "framer-motion";
+import { motion, useAnimation, useInView } from "framer-motion";
 import Card from "@/components/common/Card";
 
 const parentVariants = {
