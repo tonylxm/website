@@ -3,8 +3,19 @@ import potioncraft from "/projects/potioncraft.jpg";
 import plantr from "/projects/plantr.png";
 import hackathonWebsite from "/projects/hackathon-website.png";
 import sesaWebsite from "/projects/sesa-website.jpg";
+import jobspeakAI from "/projects/jobspeak-ai.png";
 
 export const projects = [
+    {
+    name: "JobSpeak AI",
+    role: ["Co-Founder"],
+    description:
+      "Multimodal AI agent and ML system to analyse job video interview responses and provide personalised and actionable feedback.",
+    img: jobspeakAI,
+    techStack: ["Azure AI Foundry", "HuggingFace ML models", "Docker", "TypeScript", "Python", "FastAPI" ],
+    github_url: "https://github.com/alux444/jobspeak-ai",
+    deployed_url: null,
+  },
   {
     name: "Plantr 🌱",
     role: ["Developer"],
